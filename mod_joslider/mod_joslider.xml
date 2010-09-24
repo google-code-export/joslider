@@ -64,16 +64,31 @@
 		
 		<param name="width_slide" type="text" default="900" label="Largeur du slide" description="" />
 		<param name="height_slide" type="text" default="300" label="Hauteur du slide" description="" />
-		<param name="load_jquery" type="radio" default="1" label="Charger Jquery" description="">
-			<option value="1">Oui</option>
-			<option value="0">Non</option>
+		<param name="load_jquery" type="radio" default="1" label="LOAD_JQUERY" description="">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
 		</param>
-		<param name="load_mousewheel" type="radio" default="1" label="Charger Mouse Wheel" description="">
-			<option value="1">Oui</option>
-			<option value="0">Non</option>
+		<param name="load_mousewheel" type="radio" default="1" label="LOAD_MOUSE_WHEEL" description="">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
 		</param>
 		
+		<param name="vertical_slide" type="radio" default="1" label="VERTICAL_SLIDE" description="VERTICAL_SLIDE_PRO">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
 		
+		<param name="@josliderhelp" type="josliderhelp" default="VERTICAL_SLIDE_HELP" icon="lightbulb.png" />
+		
+		<param name="speed" type="text"  default="500" label="SPEED" description="SPEED_DESCRIPTION" />
+		<param name="start" type="text"  default="1" label="START" description="START_DESCRIPTION" />
+		<param name="index" type="radio" default="1" label="INDEX" description="INDEX_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		
+		<param name="custom_index" type="text" size="45"  default="" label="CUSTOM_INDEX" description="CUSTOM_INDEX_DESCRIPTION" />
+		<param name="@josliderhelp" type="josliderhelp" default="CUSTOM_INDEX_HELP" icon="lightbulb.png" />
 		
 		<param name="@josliderhead" type="josliderhead" default="THEMES_PARAMETER" icon="css.png" />
 		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
