@@ -22,6 +22,19 @@ $doc = &JFactory::getDocument();
 if ($params->get("load_jquery", 1) == 1) $doc->addScript(JURI::Root(true) . '/modules/mod_joslider/assets/js/jquery-1.3.2.min.js');
 $doc->addScript(JURI::Root(true) . '/modules/mod_joslider/assets/js/slidedeck.jquery.lite.js');
 if ($params->get("load_mousewheel ", 1) == 1) $doc->addScript(JURI::Root(true) . '/modules/mod_joslider/assets/js/jquery.mousewheel.min.js');
+if ($params->get("index", 1) == 1 & $params->get("custom_index") == "") 
+	{
+		$index = "true";
+	}
+	elseif ($params->get("index", 1) == 1 & $params->get("custom_index") != "")
+	{	
+		$index = $params->get("custom_index");
+	}
+	else 
+	{
+		$index = "false";
+	}
+
 
 $doc->addScriptDeclaration("
 jQuery.noConflict();
@@ -34,7 +47,11 @@ jQuery(document).ready(function(){
 				window.Deck = jQuery('.slidedeck').css({
 					width: '".$params->get("width_slide", 900)."px',
 					height: '".$params->get("height_slide", 300)."px'
-				}).slidedeck();
+				}).slidedeck({
+					speed: ".$params->get("speed", 500).",
+					start: ".$params->get("start", 1).",
+					index: ".$index.",
+				});
 			});
 
 
