@@ -156,6 +156,116 @@ class modjosliderHelper
 		return $lists;
 	}
 	
+	function getTheme (&$params)
+	{
+		
+		$custom	= $params->get('custom_theme',0);
+		$theme = $params->get('skin', 'default');
+		$themeparameters = array();
+		
+		if ($custom == 0)
+			{
+			switch ($theme) {
+			case 'default' :
+					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/default/';
+					$themeparameters['class'] = 'slidedeck';
+					$themeparameters['css'] = 'slidedeck.skin.css';
+					$themeparameters['cssie'] = 'slidedeck.skin.ie.css';
+					$themeparameters['cssie7'] = '';
+					$themeparameters['cssie8'] = '';
+					break;
+				case 'voyager' :
+					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/voyager/';
+					$themeparameters['class'] = 'voyager';
+					$themeparameters['css'] = 'skin.css';
+					$themeparameters['cssie'] = '';
+					$themeparameters['cssie7'] = '';
+					$themeparameters['cssie8'] = '';
+					break;
+				case 'invasion' :
+					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/invasion/';
+					$themeparameters['class'] = 'invasion';
+					$themeparameters['css'] = 'skin.css';
+					$themeparameters['cssie'] = '';
+					$themeparameters['cssie7'] = '';
+					$themeparameters['cssie8'] = '';
+					break;
+				case 'literally' :
+					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/literally/';
+					$themeparameters['class'] = 'literally';
+					$themeparameters['css'] = 'skin.css';
+					$themeparameters['cssie'] = '';
+					$themeparameters['cssie7'] = '';
+					$themeparameters['cssie8'] = 'skin.ie8.css';
+					break;
+				case 'stitch' :
+					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/stitch/';
+					$themeparameters['class'] = 'stitch';
+					$themeparameters['css'] = 'skin.css';
+					$themeparameters['cssie'] = '';
+					$themeparameters['cssie7'] = '';
+					$themeparameters['cssie8'] = '';
+					break;
+				case 'ribbons' :
+					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/ribbons/';
+					$themeparameters['class'] = 'ribbons';
+					$themeparameters['css'] = 'skin.css';
+					$themeparameters['cssie'] = 'skin.ie.css';
+					$themeparameters['cssie7'] = '';
+					$themeparameters['cssie8'] = '';
+					break;
+				default :
+					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/default/';
+					$themeparameters['class'] = 'slidedeck';
+					$themeparameters['css'] = 'slidedeck.skin.css';
+					$themeparameters['cssie'] = 'slidedeck.skin.ie.css';
+					$themeparameters['cssie7'] = '';
+					$themeparameters['cssie8'] = '';
+					break;
+				}
+			}
+			else
+			{
+				$themeparameters['path'] = $params->get('theme_repertory', 'modules/mod_joslider/assets/css/template/custom/');
+				$themeparameters['class'] = $params->get('theme_class');
+				$themeparameters['css'] = $params->get('skin_theme');
+				$themeparameters['cssie'] = $params->get('skin_ie');
+				$themeparameters['cssie7'] = $params->get('skin_ie7');
+				$themeparameters['cssie8'] = $params->get('skin_ie8');
+				
+			}
+		
+		$doc =& JFactory::getDocument();
+		$doc->addStyleSheet(JURI::Root(true) . ''.$themeparameters['path'].''.$themeparameters['css']);
+		
+		if ($themeparameters['cssie'])
+			{
+			$cssie = '<!--[if IE]>' ."\n";
+			$cssie .= '<link rel="stylesheet" type="text/css" href="'.JURI::Root(true) . ''.$themeparameters['path'].''.$themeparameters['cssie'].'" media="screen,handheld" />' ."\n";
+			$cssie .= '<![endif]-->' ."\n";
+			$doc->addCustomTag($cssie);
+			}
+		
+		if ($themeparameters['cssie7'])
+			{
+			$cssie = '<!--[if lte IE 7]>' ."\n";
+			$cssie .= '<link rel="stylesheet" type="text/css" href="'.JURI::Root(true) . ''.$themeparameters['path'].''.$themeparameters['cssie8'].'" media="screen,handheld" />' ."\n";
+			$cssie .= '<![endif]-->' ."\n";
+			$doc->addCustomTag($cssie);
+			}
+			
+		if ($themeparameters['cssie8'])
+			{
+			$cssie = '<!--[if lte IE 8]>' ."\n";
+			$cssie .= '<link rel="stylesheet" type="text/css" href="'.JURI::Root(true) . ''.$themeparameters['path'].''.$themeparameters['cssie8'].'" media="screen,handheld" />' ."\n";
+			$cssie .= '<![endif]-->' ."\n";
+			$doc->addCustomTag($cssie);
+			}
+
+			
+		return $themeparameters;
+	}
+	
 
 	
 }

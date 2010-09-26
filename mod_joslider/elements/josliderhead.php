@@ -26,7 +26,7 @@ class JElementJosliderHead extends JElement
 	function fetchElement($name, $value, &$node, $control_name)
 	{
 		
-		if ($node->attributes( 'icon' ) != "") $icon = "<img src=\"".JURI::root(true)."/modules/mod_jslidedeck/assets/images/icons/".$node->attributes( 'icon' )."\" alt =\"" . JText::_($value) . "\" align=\"absmiddle\" vspace=\"5\" />";
+		if ($node->attributes( 'icon' ) != "") $icon = "<img src=\"".JURI::root(true)."/modules/mod_joslider/assets/images/icons/".$node->attributes( 'icon' )."\" alt =\"" . JText::_($value) . "\" align=\"absmiddle\" vspace=\"5\" />";
 		
 		if ($value) {
 			return '<p style="background: #CCE6FF;color: #0069CC;padding:5px">'.$icon.' <strong>' . JText::_($value) . '</strong></p>';

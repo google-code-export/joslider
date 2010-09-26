@@ -20,21 +20,21 @@
 	<params addpath="/modules/mod_joslider/elements">
 		
 		
-		<param name="@josliderhead" type="josliderhead" default="VERSION CHECK" icon="update.png" />
+		<param name="@josliderhead" type="josliderhead" default="VERSION_CHECK" icon="update.png" />
 		<param  type="versioncheck" />
-		<param name="@josliderhelp" type="josliderhelp" default="LIST HELP" icon="lightbulb.png" />
+		<param name="@josliderhelp" type="josliderhelp" default="LIST_HELP" icon="lightbulb.png" />
 		
-		<param name="@josliderhead" type="josliderhead" default="CONTENT PARAMETERS" icon="description.png" />
+		<param name="@josliderhead" type="josliderhead" default="CONTENT_PARAMETERS" icon="description.png" />
 		
 		<param name="content_type" type="list" default="joomla" label="Type de contenu" description="Type de contenu">
 			<option value="joomla">Contenu de Joomla</option>
 		</param>
 		
-		<param name="secid" type="section" default="" label="Section" description="" />
-		<param name="catid" type="category" default="" label="Catégorie" description="" />
+		<param name="secid" type="section" default="" label="SECTION" description="" />
+		<param name="catid" type="category" default="" label="CATEGORY" description="" />
 		
 		<param name="article_count" type="text" default="4" label="Nombre maxi d'articles" description="" />
-		<param name="itemsOrdering" type="list" default="" label="Ordre des articles" description="">
+		<param name="itemsOrdering" type="list" default="" label="ARTICLES_ORDER" description="">
 			<option value="">Défaut</option>
 			<option value="aleatoire">Aléatoire</option>
 			<option value="date">Les plus vieus en premier</option>
@@ -42,12 +42,12 @@
 			<option value="order">Ordre</option>
 		</param>
 		
-		<param name="user_id" type="list" default="0" label="Auteur" description="">
+		<param name="user_id" type="list" default="0" label="AUTHOR" description="">
 			<option value="0">N'importe qui</option>
 			<option value="by_me">Ajouté ou modifié par moi</option>
 			<option value="not_me">Non ajouté par moi</option>
 		</param>
-		<param name="show_article_title" type="radio" default="1" label="Afficher le titre" description="">
+		<param name="show_article_title" type="radio" default="1" label="DISPLAY_TITLE" description="">
 			<option value="1">Oui</option>
 			<option value="0">Non</option>
 		</param>
@@ -55,15 +55,17 @@
 		
 		<param name="@josliderhead" type="josliderhead" default="SLIDEDECK_PARAMETER" icon="cog.png" />
 		
+		<param name="id_slidedeck" type="text" default="slidedeck_frame" label="ID_SLIDEDECK" description="ID_SLIDEDECK_DESCRIPTION" />
+		
 		<param name="slidedeck_pro" type="radio" default="0" label="USE_SLIDEDECK_PRO" description="">
 			<option value="1">Oui</option>
 			<option value="0">Non</option>
 		</param>
 		
-		<param name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_jslidedeck/assets/js/pro/slidedeck.jquery.js" label="LOCATE_SLIDEDECK_PRO_SCRIPT" description="" />
+		<param name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_joslider/assets/js/pro/slidedeck.jquery.js" label="LOCATE_SLIDEDECK_PRO_SCRIPT" description="" />
 		
-		<param name="width_slide" type="text" default="900" label="Largeur du slide" description="" />
-		<param name="height_slide" type="text" default="300" label="Hauteur du slide" description="" />
+		<param name="width_slide" type="text" default="900" label="WIDTH" description="" />
+		<param name="height_slide" type="text" default="300" label="HEIGHT" description="" />
 		<param name="load_jquery" type="radio" default="1" label="LOAD_JQUERY" description="">
 			<option value="1">YES</option>
 			<option value="0">NO</option>
@@ -86,16 +88,73 @@
 			<option value="1">YES</option>
 			<option value="0">NO</option>
 		</param>
-		
 		<param name="custom_index" type="text" size="45"  default="" label="CUSTOM_INDEX" description="CUSTOM_INDEX_DESCRIPTION" />
 		<param name="@josliderhelp" type="josliderhelp" default="CUSTOM_INDEX_HELP" icon="lightbulb.png" />
+		<param name="scroll" type="radio" default="1" label="SCROLL" description="SCROLL_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="keys" type="radio" default="1" label="KEYS" description="KEYS_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="activeCorner" type="radio" default="1" label="ACTIVE_CORNER" description="ACTIVE_CORNER_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="hideSpines" type="radio" default="0" label="HIDE_SPINES" description="HIDE_SPINES_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="autoPlay" type="radio" default="0" label="AUTO_PLAY" description="AUTO_PLAY_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="autoPlayInterval" type="text"  default="5000" label="AUTO_PLAY_INTERVAL" description="AUTO_PLAY_INTERVAL_DESCRIPTION" />
+		<param name="cycle" type="radio" default="0" label="CYCLE" description="CYCLE_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="controlProgress" type="radio" default="0" label="CONTROL_PROGRESS" description="CONTROL_PROGRESS_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
 		
 		<param name="@josliderhead" type="josliderhead" default="THEMES_PARAMETER" icon="css.png" />
 		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
 		<param name="skin" type="list" default="default" label="USE_SKIN" description="USE_SKIN_DESCRIPTION">
-			<option value="default">By Slidedeck</option>
-			<option value="literally">Literally by Megan Taylor</option>
+			<option value="default">SLIDEDECK</option>
+			<option value="voyager">VOYAGER</option>
+			<option value="invasion">INVASION</option>
+			<option value="literally">LITERALLY</option>
+			<option value="stitch">STITCH</option>
+			<option value="ribbons">RIBBONS</option>
 		</param>
+		<param name="@josliderhelp" type="josliderhelp" default="SKIN_HELP" icon="lightbulb.png" />
+		<param name="custom_theme" type="radio" default="0" label="CUSTOM_THEME" description="CUSTOM_THEME_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="theme_repertory" type="text" size="45" default="modules/mod_joslider/assets/css/template/custom/" label="THEME_REPERTORY" description="THEME_REPERTORY_DESCRIPTION" />
+		<param name="@josliderhelp" type="josliderhelp" default="ATTENTION_SLASH_HELP" icon="attention.png" />
+		
+		<param name="theme_class" type="text"  default="custom" label="THEME_CLASS" description="THEME_CLASS_DESCRIPTION" />
+		
+		<param name="skin_theme" type="text"  default="" label="SKIN_CUSTOM" description="SKIN_CUSTOM_DESCRIPTION" />
+		
+		<param name="skin_ie" type="text"  default="" label="SKIN_CUSTOM_IE" description="SKIN_CUSTOM_IE_DESCRIPTION" />
+		
+		<param name="skin_ie6" type="text"  default="" label="SKIN_CUSTOM_IE6" description="SKIN_CUSTOM_IE6_DESCRIPTION" />
+		
+		<param name="skin_ie7" type="text"  default="" label="SKIN_CUSTOM_IE7" description="SKIN_CUSTOM_IE7_DESCRIPTION" />
+		
+		<param name="skin_ie8" type="text"  default="" label="SKIN_CUSTOM_IE8" description="SKIN_CUSTOM_IE8_DESCRIPTION" />
+		
+		<param name="cufonRefresh" type="radio" default="0" label="CUFON_REFRESH" description="CUFON_REFRESH_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="cufon_font" type="text" size="45" default="modules/mod_joslider/assets/js/font/Rawengulk_700.font.js" label="CUFON_FONT" description="CUFON_FONT_DESCRIPTION" />
 		
 	</params>
 	<params group="advanced">

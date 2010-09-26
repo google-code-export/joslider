@@ -46,7 +46,7 @@ class JElementVersionCheck extends JElement
 	
 	function getUpdateModule()
 	 {
-	 	$url = 'http://code.google.com/feeds/p/joslider/downloads/basic';
+	 	$url = 'http://code.google.com/feeds/p/jcampaignmonitor/downloads/basic';
 		$data = '';
 		$check = array();
 		$check['connect'] = 0;
