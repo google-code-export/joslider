@@ -19,5 +19,5 @@ require_once (dirname(__FILE__).DS.'helper.php');
 
 
 $list = modjosliderHelper::getList($params);
-
+$theme = modjosliderHelper::getTheme($params);
 require(JModuleHelper::getLayoutPath('mod_joslider'));
