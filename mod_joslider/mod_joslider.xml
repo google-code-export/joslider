@@ -135,7 +135,7 @@
 			<option value="1">YES</option>
 			<option value="0">NO</option>
 		</param>
-		<param name="theme_repertory" type="text" size="45" default="modules/mod_joslider/assets/css/template/custom/" label="THEME_REPERTORY" description="THEME_REPERTORY_DESCRIPTION" />
+		<param name="theme_repertory" type="text" size="45" default="/modules/mod_joslider/assets/css/template/custom/" label="THEME_REPERTORY" description="THEME_REPERTORY_DESCRIPTION" />
 		<param name="@josliderhelp" type="josliderhelp" default="ATTENTION_SLASH_HELP" icon="attention.png" />
 		
 		<param name="theme_class" type="text"  default="custom" label="THEME_CLASS" description="THEME_CLASS_DESCRIPTION" />
