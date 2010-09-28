@@ -226,7 +226,7 @@ class modjosliderHelper
 			}
 			else
 			{
-				$themeparameters['path'] = $params->get('theme_repertory', 'modules/mod_joslider/assets/css/template/custom/');
+				$themeparameters['path'] = $params->get('theme_repertory', '/modules/mod_joslider/assets/css/template/custom/');
 				$themeparameters['class'] = $params->get('theme_class');
 				$themeparameters['css'] = $params->get('skin_theme');
 				$themeparameters['cssie'] = $params->get('skin_ie');
