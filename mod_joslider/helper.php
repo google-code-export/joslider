@@ -30,7 +30,7 @@ class modjosliderHelper
 		$user		    =& JFactory::getUser();
 		$userId		    = (int) $user->get('id');
 
-		$count		    = $params->get('article_count',4); 
+		$count		    = $params->get('tab_count',4); 
 		$catid		    = trim( $params->get('catid') );
 		$secid		    = trim( $params->get('secid') );
 		$show_front	    = $params->get('show_front', 1);
@@ -38,8 +38,6 @@ class modjosliderHelper
 		$content_type   = $params->get('content_type','joomla');
 		$ordering       = $params->get('itemsOrdering');
 		$cid            = $params->get('category_id', NULL);
-		$user_id        = $params->get('user_id');
-		
 
 		$contentConfig  = &JComponentHelper::getParams( 'com_content' );
 		$access		    = !$contentConfig->get('shownoauth');
@@ -50,16 +48,6 @@ class modjosliderHelper
 		$now = $date->toMySQL();
 		$where = '';
 		
-		// User Filter
-		switch ($user_id)
-		{
-			case 'by_me':
-				$where .= ' AND (a.created_by = ' . (int) $userId . ' OR a.modified_by = ' . (int) $userId . ')';
-				break;
-			case 'not_me':
-				$where .= ' AND (a.created_by <> ' . (int) $userId . ' AND a.modified_by <> ' . (int) $userId . ')';
-				break;
-		}
 		
 		// ensure should be published
 		$where .= " AND ( a.publish_up = ".$db->Quote($nullDate)." OR a.publish_up <= ".$db->Quote($now)." )";
@@ -82,7 +70,7 @@ class modjosliderHelper
 			case 'order' :
 				$orderby = 'a.ordering';
 				break;
-			case 'aleatoire' :
+			case 'random' :
 				$orderby = 'rand()';
 				break;
 			default :
