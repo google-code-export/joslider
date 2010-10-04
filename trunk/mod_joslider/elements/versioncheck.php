@@ -30,14 +30,14 @@ class JElementVersionCheck extends JElement
 		
 		if ($check['connect'] == 0)
 			{
-				$msg ='<div style="background: #FFD5D5;color: #ff0000;padding:5px"> <img src="'.JURI::root(true).'/modules/mod_jslidedeck/assets/images/alert.png" alt ="" align="absmiddle" vspace="5" /> '.JText::_( 'CONNECTION FAILED' ).'</div>';
+				$msg ='<div style="background: #FFD5D5;color: #ff0000;padding:5px"> <img src="'.JURI::root(true).'/modules/mod_jslidedeck/assets/images/alert.png" alt ="" align="absmiddle" vspace="5" /> '.JText::_( 'CONNECTION_FAILED' ).'</div>';
 			}
 			else
 			{
 				if ($check['current'] == 0) {
-		  				$msg ='<div style="background: #e4f3e2;color: #000;padding:5px"> <img src="'.JURI::root(true).'/modules/mod_jslidedeck/assets/images/approved.png" alt ="" align="absmiddle" vspace="5" /> '.sprintf ( JText::_( 'LATEST VERSION' ),  $check['version'], $check['current_version'], $check['link']).'</div>';
+		  				$msg ='<div style="background: #e4f3e2;color: #000;padding:5px"> <img src="'.JURI::root(true).'/modules/mod_jslidedeck/assets/images/approved.png" alt ="" align="absmiddle" vspace="5" /> '.sprintf ( JText::_( 'LATEST_VERSION' ),  $check['version'], $check['current_version'], $check['link']).'</div>';
 		  			} else {
-		  				$msg ='<div style="background: #FFD5D5;color: #ff0000;padding:5px"> <img src="'.JURI::root(true).'/modules/mod_jslidedeck/assets/images/alert.png" alt ="" align="absmiddle" vspace="5" /> '.sprintf ( JText::_( 'NEW VERSION' ),  $check['version'], $check['current_version'], $check['link']).'</div>';
+		  				$msg ='<div style="background: #FFD5D5;color: #ff0000;padding:5px"> <img src="'.JURI::root(true).'/modules/mod_jslidedeck/assets/images/alert.png" alt ="" align="absmiddle" vspace="5" /> '.sprintf ( JText::_( 'NEW_VERSION' ),  $check['version'], $check['current_version'], $check['link']).'</div>';
 		  			}
 				
 			}
