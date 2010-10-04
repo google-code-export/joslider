@@ -30,27 +30,27 @@
 		
 		<param name="@josliderhead" type="josliderhead" default="CONTENT_PARAMETERS" icon="description.png" />
 		
-		<param name="content_type" type="list" default="joomla" label="Type de contenu" description="Type de contenu">
-			<option value="joomla">Contenu de Joomla</option>
+		<param name="content_type" type="list" default="joomla" label="TYPE_CONTENT" description="TYPE_CONTENT_DESCRIPTION">
+			<option value="joomla">JOOMLA_CONTENT</option>
 		</param>
 		
 		<param name="secid" type="section" default="" label="SECTION" description="" />
 		<param name="catid" type="category" default="" label="CATEGORY" description="" />
 		
-		<param name="article_count" type="text" default="4" label="Nombre maxi d'articles" description="" />
+		
 		<param name="itemsOrdering" type="list" default="" label="ARTICLES_ORDER" description="">
-			<option value="">Défaut</option>
-			<option value="aleatoire">Aléatoire</option>
-			<option value="date">Les plus vieus en premier</option>
-			<option value="rdate">Les plus récents en premier</option>
-			<option value="order">Ordre</option>
+			<option value="">DEFAULT</option>
+			<option value="random">RANDOM</option>
+			<option value="date">OLDEST_FIRST</option>
+			<option value="rdate">MOST_RECENT_FIRST</option>
+			<option value="order">ORDER</option>
+		</param>
+		<param name="show_front" type="radio" default="1" label="SHOW_FRONT" description="SHOW_FRONT_DESCRIPTION">
+			<option value="1">SHOW</option>
+			<option value="0">HIDE</option>
+			<option value="2">ONLY_FRONTPAGE_ITEM</option>
 		</param>
 		
-		<param name="user_id" type="list" default="0" label="AUTHOR" description="">
-			<option value="0">N'importe qui</option>
-			<option value="by_me">Ajouté ou modifié par moi</option>
-			<option value="not_me">Non ajouté par moi</option>
-		</param>
 		<param name="show_article_title" type="radio" default="1" label="DISPLAY_TITLE" description="">
 			<option value="1">Oui</option>
 			<option value="0">Non</option>
@@ -67,7 +67,7 @@
 		</param>
 		
 		<param name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_joslider/assets/js/pro/slidedeck.jquery.js" label="LOCATE_SLIDEDECK_PRO_SCRIPT" description="" />
-		
+		<param name="tab_count" type="text" default="4" label="TAB_COUNT" description="TAB_COUNT_DESCRIPTION" />
 		<param name="width_slide" type="text" default="900" label="WIDTH" description="" />
 		<param name="height_slide" type="text" default="300" label="HEIGHT" description="" />
 		<param name="load_jquery" type="radio" default="1" label="LOAD_JQUERY" description="">
@@ -79,7 +79,7 @@
 			<option value="0">NO</option>
 		</param>
 		
-		<param name="vertical_slide" type="radio" default="1" label="VERTICAL_SLIDE" description="VERTICAL_SLIDE_PRO">
+		<param name="vertical_slide" type="radio" default="1" label="VERTICAL_SLIDE_PRO" description="VERTICAL_SLIDE_PRO_DESCRIPTION">
 			<option value="1">YES</option>
 			<option value="0">NO</option>
 		</param>
