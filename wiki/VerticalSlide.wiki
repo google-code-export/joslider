@@ -1,0 +1,16 @@
+#labels help
+= How to use vertical slide with joSlider =
+
+If you use a vertical slide option, you must add in your Joomla! content, a tag "ul" with the class "slidesVertical" :
+
+
+{{{
+<ul class="slidesVertical">
+            <li><p>Vertical Slide 1</p></li>
+            <li><p>Vertical Slide 2</p></li>
+            <li><p>Vertical Slide 3</p></li>
+            <li><p>Vertical Slide 4</p></li>
+</ul>
+}}}
+
+For more information : http://www.slidedeck.com/usage-documentation/vertical_slides/
