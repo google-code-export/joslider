@@ -26,8 +26,6 @@
 		
 		<param name="@josliderhead" type="josliderhead" default="VERSION_CHECK" icon="update.png" />
 		<param  type="versioncheck" />
-		<param name="@josliderhelp" type="josliderhelp" default="LIST_HELP" icon="lightbulb.png" />
-		
 		<param name="@josliderhead" type="josliderhead" default="CONTENT_PARAMETERS" icon="description.png" />
 		
 		<param name="content_type" type="list" default="joomla" label="TYPE_CONTENT" description="TYPE_CONTENT_DESCRIPTION">
@@ -50,12 +48,6 @@
 			<option value="0">HIDE</option>
 			<option value="2">ONLY_FRONTPAGE_ITEM</option>
 		</param>
-		
-		<param name="show_article_title" type="radio" default="1" label="DISPLAY_TITLE" description="">
-			<option value="1">Oui</option>
-			<option value="0">Non</option>
-		</param>
-		
 		
 		<param name="@josliderhead" type="josliderhead" default="SLIDEDECK_PARAMETER" icon="cog.png" />
 		
@@ -119,11 +111,6 @@
 			<option value="1">YES</option>
 			<option value="0">NO</option>
 		</param>
-		<param name="controlProgress" type="radio" default="0" label="CONTROL_PROGRESS" description="CONTROL_PROGRESS_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
-		</param>
-		
 		<param name="@josliderhead" type="josliderhead" default="THEMES_PARAMETER" icon="css.png" />
 		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
 		<param name="skin" type="list" default="default" label="USE_SKIN" description="USE_SKIN_DESCRIPTION">
@@ -134,7 +121,6 @@
 			<option value="stitch">STITCH</option>
 			<option value="ribbons">RIBBONS</option>
 		</param>
-		<param name="@josliderhelp" type="josliderhelp" default="SKIN_HELP" icon="lightbulb.png" />
 		<param name="custom_theme" type="radio" default="0" label="CUSTOM_THEME" description="CUSTOM_THEME_DESCRIPTION">
 			<option value="1">YES</option>
 			<option value="0">NO</option>
