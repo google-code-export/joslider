@@ -141,8 +141,8 @@
 			<option value="1">YES</option>
 			<option value="0">NO</option>
 		</param>
-		<param name="cufon_font" type="text" size="45" default="modules/mod_joslider/assets/js/font/Rawengulk_700.font.js" label="CUFON_FONT" description="CUFON_FONT_DESCRIPTION" />
-		
+		<param name="cufon_font" type="text" size="45" default="modules/mod_joslider/assets/js/font/Rawengulk_700.font.js" label="CUFON_FONT"  />
+		<param name="@josliderhelp" type="josliderhelp" default="CUFON_FONT_HELP" icon="lightbulb.png" />
 	</params>
 	<params group="advanced">
 		<param name="cache" type="hidden" default="0" />
