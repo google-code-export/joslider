@@ -17,6 +17,10 @@
 		<folder>assets/</folder>
 		<folder>elements</folder>
 	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_joslider.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_joslider.ini</language>
+	</languages>
 	<params addpath="/modules/mod_joslider/elements">
 		
 		
