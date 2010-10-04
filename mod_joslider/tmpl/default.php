@@ -46,7 +46,6 @@ if ($params->get("activeCorner", 1) == 1) $activeCorner = "true"; else $activeCo
 if ($params->get("hideSpines", 0) == 1) $hideSpines = "true"; else $hideSpines = "false";
 if ($params->get("autoPlay", 0) == 1) $autoPlay = "true"; else $autoPlay = "false";
 if ($params->get("cycle", 0) == 1) $cycle = "true"; else $cycle = "false";
-if ($params->get("controlProgress", 0) == 1) $controlProgress = "true"; else $controlProgress = "false";
 if ($params->get("cufonRefresh", 0) == 1) $font = "Cufon.replace('dl.slidedeck dt');";
 if ($params->get("vertical_slide", 1) == 1 && $params->get("slidedeck_pro", 0) == 1) $vertical = ".vertical()";
 
@@ -76,7 +75,6 @@ jQuery(document).ready(function(){
 					autoPlay: ".$autoPlay.",
 					autoPlayInterval: ".$params->get("autoPlayInterval", 5000).",
 					cycle: ".$cycle.",
-					controlProgress: ".$controlProgress.",
 					cufonRefresh: 'dl.slidedeck dt'
 				})".$vertical.";
 				
