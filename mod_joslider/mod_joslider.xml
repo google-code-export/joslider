@@ -24,9 +24,9 @@
 	<params addpath="/modules/mod_joslider/elements">
 		
 		
-		<param name="@josliderhead" type="josliderhead" default="VERSION_CHECK" icon="update.png" />
+		<param   type="josliderhead" default="VERSION_CHECK" icon="update.png" />
 		<param  type="versioncheck" />
-		<param name="@josliderhead" type="josliderhead" default="CONTENT_PARAMETERS" icon="description.png" />
+		<param   type="josliderhead" default="CONTENT_PARAMETERS" icon="description.png" />
 		
 		<param name="content_type" type="list" default="joomla" label="TYPE_CONTENT" description="TYPE_CONTENT_DESCRIPTION">
 			<option value="joomla">JOOMLA_CONTENT</option>
@@ -49,7 +49,7 @@
 			<option value="2">ONLY_FRONTPAGE_ITEM</option>
 		</param>
 		
-		<param name="@josliderhead" type="josliderhead" default="SLIDEDECK_PARAMETER" icon="cog.png" />
+		<param   type="josliderhead" default="SLIDEDECK_PARAMETER" icon="cog.png" />
 		
 		<param name="id_slidedeck" type="text" default="slidedeck_frame" label="ID_SLIDEDECK" description="ID_SLIDEDECK_DESCRIPTION" />
 		
@@ -57,7 +57,7 @@
 			<option value="1">Oui</option>
 			<option value="0">Non</option>
 		</param>
-		<param name="@josliderhelp" type="josliderhelp" default="SLIDEDECK_PRO_HELP" icon="add.png" />
+		<param   type="josliderhelp" default="SLIDEDECK_PRO_HELP" icon="add.png" />
 		<param name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_joslider/assets/js/pro/slidedeck.jquery.js" label="LOCATE_SLIDEDECK_PRO_SCRIPT" description="" />
 		<param name="tab_count" type="text" default="4" label="TAB_COUNT" description="TAB_COUNT_DESCRIPTION" />
 		<param name="width_slide" type="text" default="900" label="WIDTH" description="" />
@@ -75,7 +75,7 @@
 			<option value="1">YES</option>
 			<option value="0">NO</option>
 		</param>
-		<param name="@josliderhelp" type="josliderhelp" default="VERTICAL_SLIDE_HELP" icon="lightbulb.png" />
+		<param   type="josliderhelp" default="VERTICAL_SLIDE_HELP" icon="lightbulb.png" />
 		<param name="speed" type="text"  default="500" label="SPEED" description="SPEED_DESCRIPTION" />
 		<param name="start" type="text"  default="1" label="START" description="START_DESCRIPTION" />
 		<param name="index" type="radio" default="1" label="INDEX" description="INDEX_DESCRIPTION">
@@ -83,7 +83,7 @@
 			<option value="0">NO</option>
 		</param>
 		<param name="custom_index" type="text" size="45"  default="" label="CUSTOM_INDEX" description="CUSTOM_INDEX_DESCRIPTION" />
-		<param name="@josliderhelp" type="josliderhelp" default="CUSTOM_INDEX_HELP" icon="lightbulb.png" />
+		<param   type="josliderhelp" default="CUSTOM_INDEX_HELP" icon="lightbulb.png" />
 		<param name="scroll" type="radio" default="1" label="SCROLL" description="SCROLL_DESCRIPTION">
 			<option value="1">YES</option>
 			<option value="0">NO</option>
@@ -109,7 +109,7 @@
 			<option value="1">YES</option>
 			<option value="0">NO</option>
 		</param>
-		<param name="@josliderhead" type="josliderhead" default="THEMES_PARAMETER" icon="css.png" />
+		<param   type="josliderhead" default="THEMES_PARAMETER" icon="css.png" />
 		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
 		<param name="skin" type="list" default="default" label="USE_SKIN" description="USE_SKIN_DESCRIPTION">
 			<option value="default">SLIDEDECK</option>
@@ -124,7 +124,7 @@
 			<option value="0">NO</option>
 		</param>
 		<param name="theme_repertory" type="text" size="45" default="/modules/mod_joslider/assets/css/template/custom/" label="THEME_REPERTORY" description="THEME_REPERTORY_DESCRIPTION" />
-		<param name="@josliderhelp" type="josliderhelp" default="ATTENTION_SLASH_HELP" icon="attention.png" />
+		<param   type="josliderhelp" default="ATTENTION_SLASH_HELP" icon="attention.png" />
 		
 		<param name="theme_class" type="text"  default="custom" label="THEME_CLASS" description="THEME_CLASS_DESCRIPTION" />
 		
@@ -135,14 +135,14 @@
 		<param name="skin_ie7" type="text"  default="" label="SKIN_CUSTOM_IE7" description="SKIN_CUSTOM_IE7_DESCRIPTION" />
 		
 		<param name="skin_ie8" type="text"  default="" label="SKIN_CUSTOM_IE8" description="SKIN_CUSTOM_IE8_DESCRIPTION" />
-		<param name="@josliderhelp" type="josliderhelp" default="CUSTOM_THEME_HELP" icon="lightbulb.png" />
+		<param   type="josliderhelp" default="CUSTOM_THEME_HELP" icon="lightbulb.png" />
 		
 		<param name="cufonRefresh" type="radio" default="0" label="CUFON_REFRESH" description="CUFON_REFRESH_DESCRIPTION">
 			<option value="1">YES</option>
 			<option value="0">NO</option>
 		</param>
 		<param name="cufon_font" type="text" size="45" default="modules/mod_joslider/assets/js/font/Rawengulk_700.font.js" label="CUFON_FONT"  />
-		<param name="@josliderhelp" type="josliderhelp" default="CUFON_FONT_HELP" icon="lightbulb.png" />
+		<param   type="josliderhelp" default="CUFON_FONT_HELP" icon="lightbulb.png" />
 	</params>
 	<params group="advanced">
 		<param name="cache" type="hidden" default="0" />
