@@ -8,7 +8,7 @@
 	<authoremail>matthieu@ccomca.com</authoremail>
 	<authorurl>www.ccomca.com</authorurl>
 	<version>1.0</version>
-	<description>Permet d'afficher le script slidedeck</description>
+	<description>JOSLIDER_DESCRIPTION</description>
 	<files>
 		<filename module="mod_joslider">mod_joslider.php</filename>
 		<filename>helper.php</filename>
@@ -53,11 +53,11 @@
 		
 		<param name="id_slidedeck" type="text" default="slidedeck_frame" label="ID_SLIDEDECK" description="ID_SLIDEDECK_DESCRIPTION" />
 		
-		<param name="slidedeck_pro" type="radio" default="0" label="USE_SLIDEDECK_PRO" description="">
+		<param name="slidedeck_pro" type="radio" default="0" label="USE_SLIDEDECK_PRO" description="USE_SLIDEDECK_PRO_DESCRIPTION">
 			<option value="1">Oui</option>
 			<option value="0">Non</option>
 		</param>
-		
+		<param name="@josliderhelp" type="josliderhelp" default="SLIDEDECK_PRO_HELP" icon="add.png" />
 		<param name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_joslider/assets/js/pro/slidedeck.jquery.js" label="LOCATE_SLIDEDECK_PRO_SCRIPT" description="" />
 		<param name="tab_count" type="text" default="4" label="TAB_COUNT" description="TAB_COUNT_DESCRIPTION" />
 		<param name="width_slide" type="text" default="900" label="WIDTH" description="" />
