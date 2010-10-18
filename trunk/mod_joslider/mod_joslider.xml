@@ -2,7 +2,7 @@
 <install type="module" version="1.5.0" method="upgrade">
 	<name>joSlider</name>
 	<author>Matthieu BARBE</author>
-	<creationdate>15/09/2010</creationdate>
+	<creationdate>18/10/2010</creationdate>
 	<copyright>Copyright (C) 2005 - 2009 CCC. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authoremail>matthieu@ccomca.com</authoremail>

@@ -4,7 +4,10 @@
  * @subpackage joSlider
  * @copyright (C) 2010 - Matthieu BARBE - www.ccomca.com
  * @license GNU/GPL v2
- * 
+ *
+ *
+ * joSlider is a module for Joomla, that allows use the  free script SlideDeck.
+ * SlideDeck ® (http://www.slidedeck.com/) is a registered trademark of digital-telepathy (http://www.dtelepathy.com/).
  *
  * joSlider is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
