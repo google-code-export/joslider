@@ -79,7 +79,7 @@ class JElementVersionCheck extends JElement
 		if( $data ) {
 			$xml = & JFactory::getXMLparser('Simple');
 			$xml->loadString($data);
-			
+			$version = '';
 			foreach ($xml->document->entry as $entry) {
 				
 				$title = (string) $entry->title[0]->data();
