@@ -151,7 +151,15 @@ class modjosliderHelper
 	{
 		
 		$custom	= $params->get('custom_theme',0);
-		$theme = $params->get('skin', 'default');
+		
+		if ($params->get('skin_type') == 'smart')
+			{
+				$theme = $params->get('skinSmart', 'smart');
+			}
+			else
+			{
+					$theme = $params->get('skin', 'default');
+			}
 		$themeparameters = array();
 		
 		if ($custom == 0)
@@ -164,6 +172,7 @@ class modjosliderHelper
 					$themeparameters['cssie'] = 'slidedeck.skin.ie.css';
 					$themeparameters['cssie7'] = '';
 					$themeparameters['cssie8'] = '';
+					$themeparameters['skinjs'] = '';
 					break;
 				case 'voyager' :
 					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/voyager/';
@@ -172,6 +181,7 @@ class modjosliderHelper
 					$themeparameters['cssie'] = '';
 					$themeparameters['cssie7'] = '';
 					$themeparameters['cssie8'] = '';
+					$themeparameters['skinjs'] = '';
 					break;
 				case 'invasion' :
 					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/invasion/';
@@ -180,6 +190,7 @@ class modjosliderHelper
 					$themeparameters['cssie'] = '';
 					$themeparameters['cssie7'] = '';
 					$themeparameters['cssie8'] = '';
+					$themeparameters['skinjs'] = '';
 					break;
 				case 'literally' :
 					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/literally/';
@@ -188,6 +199,7 @@ class modjosliderHelper
 					$themeparameters['cssie'] = '';
 					$themeparameters['cssie7'] = '';
 					$themeparameters['cssie8'] = 'skin.ie8.css';
+					$themeparameters['skinjs'] = '';
 					break;
 				case 'stitch' :
 					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/stitch/';
@@ -196,6 +208,7 @@ class modjosliderHelper
 					$themeparameters['cssie'] = '';
 					$themeparameters['cssie7'] = '';
 					$themeparameters['cssie8'] = '';
+					$themeparameters['skinjs'] = '';
 					break;
 				case 'ribbons' :
 					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/ribbons/';
@@ -204,6 +217,16 @@ class modjosliderHelper
 					$themeparameters['cssie'] = 'skin.ie.css';
 					$themeparameters['cssie7'] = '';
 					$themeparameters['cssie8'] = '';
+					$themeparameters['skinjs'] = '';
+					break;
+				case 'smart' :
+					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/smart/';
+					$themeparameters['class'] = 'light';
+					$themeparameters['css'] = 'skin.css';
+					$themeparameters['cssie'] = '';
+					$themeparameters['cssie7'] = 'skin.ie7.css';
+					$themeparameters['cssie8'] = '';
+					$themeparameters['skinjs'] = 'skin.js';
 					break;
 				default :
 					$themeparameters['path'] = '/modules/mod_joslider/assets/css/template/default/';
@@ -212,6 +235,7 @@ class modjosliderHelper
 					$themeparameters['cssie'] = 'slidedeck.skin.ie.css';
 					$themeparameters['cssie7'] = '';
 					$themeparameters['cssie8'] = '';
+					$themeparameters['skinjs'] = '';
 					break;
 				}
 			}
@@ -223,11 +247,14 @@ class modjosliderHelper
 				$themeparameters['cssie'] = $params->get('skin_ie');
 				$themeparameters['cssie7'] = $params->get('skin_ie7');
 				$themeparameters['cssie8'] = $params->get('skin_ie8');
+				$themeparameters['skinjs'] = $params->get('skin_js');
 				
 			}
 		
 		$doc =& JFactory::getDocument();
 		$doc->addStyleSheet(JURI::Root(true) . ''.$themeparameters['path'].''.$themeparameters['css']);
+		
+		
 		
 		if ($themeparameters['cssie'])
 			{
