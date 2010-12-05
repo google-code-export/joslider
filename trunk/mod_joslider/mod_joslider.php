@@ -23,4 +23,11 @@ require_once (dirname(__FILE__).DS.'helper.php');
 
 $list = modjosliderHelper::getList($params);
 $theme = modjosliderHelper::getTheme($params);
-require(JModuleHelper::getLayoutPath('mod_joslider'));
+if ($params->get('skin_type') == 'smart')
+		{
+			require(JModuleHelper::getLayoutPath('mod_joslider', 'smart'));
+		}
+		else
+		{
+			require(JModuleHelper::getLayoutPath('mod_joslider'));
+		}
