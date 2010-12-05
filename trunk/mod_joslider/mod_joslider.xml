@@ -111,6 +111,10 @@
 		</param>
 		<param   type="josliderhead" default="THEMES_PARAMETER" icon="css.png" />
 		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="skin_type" type="list" default="default" label="SKIN_TYPE" description="SKIN_TYPE_DESCRIPTION">
+			<option value="normal">NORMAL</option>
+			<option value="smart">SMART</option>
+		</param>
 		<param name="skin" type="list" default="default" label="USE_SKIN" description="USE_SKIN_DESCRIPTION">
 			<option value="default">SLIDEDECK</option>
 			<option value="voyager">VOYAGER</option>
@@ -119,6 +123,11 @@
 			<option value="stitch">STITCH</option>
 			<option value="ribbons">RIBBONS</option>
 		</param>
+		
+		<param name="skinSmart" type="list" default="smart" label="USE_SKIN_SMART" description="USE_SKIN_SMART_DESCRIPTION">
+			<option value="smart">Default</option>
+		</param>
+		
 		<param name="custom_theme" type="radio" default="0" label="CUSTOM_THEME" description="CUSTOM_THEME_DESCRIPTION">
 			<option value="1">YES</option>
 			<option value="0">NO</option>
@@ -135,6 +144,7 @@
 		<param name="skin_ie7" type="text"  default="" label="SKIN_CUSTOM_IE7" description="SKIN_CUSTOM_IE7_DESCRIPTION" />
 		
 		<param name="skin_ie8" type="text"  default="" label="SKIN_CUSTOM_IE8" description="SKIN_CUSTOM_IE8_DESCRIPTION" />
+		<param name="skinjs" type="text"  default="" label="SKIN_JS" description="SKIN_JS_DESCRIPTION" />
 		<param   type="josliderhelp" default="CUSTOM_THEME_HELP" icon="lightbulb.png" />
 		
 		<param name="cufonRefresh" type="radio" default="0" label="CUFON_REFRESH" description="CUFON_REFRESH_DESCRIPTION">
