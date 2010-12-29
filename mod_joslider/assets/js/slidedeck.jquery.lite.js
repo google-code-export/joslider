@@ -1,5 +1,5 @@
 /**
- * SlideDeck 1.1.9 Lite - 2010-11-08
+ * SlideDeck 1.2.0 Lite - 2010-12-20
  * Copyright (c) 2010 digital-telepathy (http://www.dtelepathy.com)
  * 
  * Support the developers by purchasing the Pro version at http://www.slidedeck.com/download
@@ -38,7 +38,7 @@ var SlideDeck;
         var self = this,
             el = $(el);
         
-        var VERSION = "1.1.9";
+        var VERSION = "1.2.0";
         
         this.options = {
             speed: 500,
@@ -414,8 +414,10 @@ var SlideDeck;
                 $(document).bind('keydown', function(event){
                     if($(event.target).parents().index(self.deck) == -1){
                         if(event.keyCode == 39) {
+                            self.pauseAutoPlay = true;
                             self.next();
                         } else if(event.keyCode == 37) {
+                            self.pauseAutoPlay = true;
                             self.prev();
                         }
                     }
@@ -451,6 +453,7 @@ var SlideDeck;
                                         }
                                     break;
                                 }
+                                self.pauseAutoPlay = true;
                                 self.next();
                             }
                             else {
@@ -465,6 +468,7 @@ var SlideDeck;
                                         }
                                     break;
                                 }
+                                self.pauseAutoPlay = true;
                                 self.prev();
                             }
                         }
