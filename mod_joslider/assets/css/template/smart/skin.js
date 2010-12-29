@@ -112,7 +112,7 @@
             for(var z=0, slides=el.find('dd.slide .sd-node-container'); z<slides.length; z++){
                 var thisSlide = $(slides[z]);
                 var slideWidth = thisSlide.innerWidth();
-                var slideImage = thisSlide.find('img');
+                var slideImage = thisSlide.find('.sd-node-image img');
                 
                 if(thisSlide.find('.sd-node-image').length){
                     thisSlide.find('.sd-node-content').css({
