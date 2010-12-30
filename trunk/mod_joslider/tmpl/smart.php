@@ -29,18 +29,6 @@ if ($params->get("slidedeck_pro", 0) == 0) $doc->addScript(JURI::Root(true) . '/
 if ($params->get("load_mousewheel ", 1) == 1) $doc->addScript(JURI::Root(true) . '/modules/mod_joslider/assets/js/jquery.mousewheel.min.js');
 
 
-if ($params->get("index", 1) == 1 & $params->get("custom_index") == "") 
-	{
-		$index = "true";
-	}
-	elseif ($params->get("index", 1) == 1 & $params->get("custom_index") != "")
-	{	
-		$index = $params->get("custom_index");
-	}
-	else 
-	{
-		$index = "false";
-	}
 
 $idSlidedeck = $params->get("id_slidedeck", "slidedeck_frame");
 if ($params->get("scroll", 1) == 1) $scroll = "true"; else $scroll = "false";
@@ -68,7 +56,6 @@ jQuery(document).ready(function(){
 				jQuery('#".$idSlidedeck."').slidedeck({
 					speed: ".$params->get("speed", 500).",
 					start: ".$params->get("start", 1).",
-					index: ".$index.",
 					scroll: ".$scroll.",
 					keys: ".$keys.",
 					activeCorner: ".$activeCorner.",
@@ -101,23 +88,41 @@ jQuery(document).ready(function(){
                  <div class="sd-node sd-node-container">
                     <div class="sd-node sd-node-content">
                         <div class="sd-node sd-node-title">
-                            <a href="#" target="_blank"><?php echo $item->title; ?></a>
+                            <a href="<?php echo $item->link; ?>" target="<?php echo $params->get("target", '_parent'); ?>"><?php echo $item->title; ?></a>
                         </div>
-                        <div class="sd-node sd-node-date">Dec 5th</div>
-                        <div class="sd-node sd-node-timesince">Posted 5 hours ago</div>
+                        <div class="sd-node sd-node-date"><?php echo $item->dateSmall; ?></div>
+                        <?php if ($params->get("dateType", 'dateCreation') != 'dateNone') : ?>
+                        <div class="sd-node sd-node-timesince"><?php echo JText::_('POSTED'); ?> <?php echo $item->date; ?></div>
+                        <?php endif; ?>
                         <div class="sd-node sd-node-excerpt">
-                           <p>  <?php echo $item->introtext; ?></p>
+                           <?php echo $item->introtext; ?>
                         </div>
-                        <div class="sd-node sd-node-permalink"><a href="#" target="_blank">Read More</a></div>
-                    </div>
+                        
+                        <?php if ($params->get("displayReadMore", 1) == 1) : ?>
+                        <div class="sd-node sd-node-permalink"><a href="<?php echo $item->link; ?>" target="<?php echo $params->get("target", '_parent'); ?>">
+                        <?php if ($params->get("textReadMore", '') == '') : ?>
+						<?php echo JText::_('READ_MORE'); ?>
+                         <?php else: ?>
+                        <?php echo $params->get("textReadMore"); ?>
+                         <?php endif; ?>
+                        
+                        </a></div>
+                          <?php endif; ?>
+                        
+                    	</div>
+                      
+                    
+                    <?php if ($params->get('skin_type') == 'smart' && $params->get('extractImage') == 1 && $item->thumb != "") : ?>
                     <div class="sd-node sd-node-image">
                         <div class="sd-node sd-node-image-child">
-                            <a href="#" target="_blank">
-                                
+                           <a href="<?php echo $item->link; ?>" target="<?php echo $params->get("target", '_parent'); ?>">
+                               <img src="<?php echo $item->thumb; ?>"  alt="image" width="<?php echo $item->thumbSizes['width']; ?>" height="<?php echo $item->thumbSizes['height']; ?>" /> 
                             </a>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
+                
                 
                 
                 </dd>
@@ -125,16 +130,9 @@ jQuery(document).ready(function(){
 <?php endforeach; ?>
 </dl>
 
- <a class="sd-node sd-node-nav-link sd-node-previous" href="#previous" target="_blank">Previous</a><a class="sd-node sd-node-nav-link sd-node-next" href="#next" target="_blank">Next</a>
-        <!-- 
-        Use these callsses on the below UL for the various types of navigation.
-        Note that for post-titles, the maximum number of slides is 5.
+ <a class="sd-node sd-node-nav-link sd-node-previous" href="#previous" target="_blank"><?php echo JText::_('PREVIOUS'); ?></a><a class="sd-node sd-node-nav-link sd-node-next" href="#next" target="_blank"><?php echo JText::_('NEXT'); ?></a>
         
-        class="sd-node sd-node-nav sd-node-nav-primary sd-node-navigation-type-post-titles"
-        class="sd-node sd-node-nav sd-node-nav-primary sd-node-navigation-type-dates"
-        class="sd-node sd-node-nav sd-node-nav-primary sd-node-navigation-type-simple-dots"
-         -->
-        <ul class="sd-node sd-node-nav sd-node-nav-primary sd-node-navigation-type-post-titles"></ul>
+        <ul class="sd-node sd-node-nav sd-node-nav-primary sd-node-navigation-type-<?php echo $params->get("typeNavigation", 'post-titles'); ?>"></ul>
 </div>
 
 <?php echo '<script type="text/javascript" src="'.JURI::Root() . ''.$theme['path'].''.$theme['skinjs'].'"></script>'; ?>
