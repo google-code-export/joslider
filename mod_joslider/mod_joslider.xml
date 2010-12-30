@@ -64,7 +64,7 @@
 			<option value="0">NO</option>
 		</param>
 		<param name="textReadMore" type="text" default="" label="TEXT_READ_MORE" description="TEXT_READ_MORE_DESCRIPTION" />
-		<param name="target" type="list" default="_parent" label="TARGET_LINK" description="TARGET_LINK_DESCRIPTION">
+		<param name="target" type="list" default="_parent" label="TARGET_LINK" >
 			<option value="_parent">PARENT</option>
 			<option value="_blank">BLANK</option>
 		</param>
@@ -174,7 +174,7 @@
 			<option value="dateModification">DATE_MODIFICATION</option>
 			<option value="dateNone">NO_DATE</option>
 		</param>
-		<param name="dateFormat" type="list" default="DATE_FORMAT_LC" label="DATE_FORMAT" description="DATE_FORMAT_DESCRIPTION">
+		<param name="dateFormat" type="list" default="DATE_FORMAT_LC" label="DATE_FORMAT" >
 			<option value="DATE_FORMAT_LC">DATE_FORMAT_LC</option>
 			<option value="DATE_FORMAT_LC1">DATE_FORMAT_LC1</option>
 			<option value="DATE_FORMAT_LC2">DATE_FORMAT_LC2</option>
@@ -189,7 +189,7 @@
 		<param name="thumbSize" type="text"  default="90" label="THUMB_SIZE" description="THUMB_SIZE_DESCRIPTION"  />
 		
 		
-		<param name="typeNavigation" type="list" default="post-titles" label="TYPE_NAVIGATION" description="TYPE_NAVIGATION_DESCRIPTION">
+		<param name="typeNavigation" type="list" default="post-titles" label="TYPE_NAVIGATION" >
 			<option value="post-titles">TITLE</option>
 			<option value="dates">DATES</option>
 			<option value="simple-dots">SIMPLE_DOTS</option>
