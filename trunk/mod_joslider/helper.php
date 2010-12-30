@@ -137,10 +137,19 @@ class modjosliderHelper
     		    //process content plugins
     		    $text = JHTML::_('content.prepare',$row->introtext,$cparams);
     			$lists[$i]->id = $row->id;
-    			$lists[$i]->created = $row->created;
-    			$lists[$i]->modified = $row->modified;
-    			$lists[$i]->title = htmlspecialchars( $row->title );
-    			$lists[$i]->introtext = $text;
+				$lists[$i]->link = JRoute::_(ContentHelperRoute::getArticleRoute($row->slug, $row->catslug, $row->sectionid));
+    			$lists[$i]->title = modjosliderHelper::getTitle ($params, $row->title);
+				$lists[$i]->date =  modjosliderHelper::getDate ($params, $row->created , $row->modified);
+				$lists[$i]->dateSmall =  modjosliderHelper::getDateSmall ($params, $row->created , $row->modified);
+    			$lists[$i]->introtext = modjosliderHelper::getText ($params,  $text );
+				if ($params->get('skin_type') == 'smart' && $params->get('extractImage') == 1)
+					{
+					$thumb_size = $params->get('thumbSize',90);
+					$images = modjosliderHelper::getImages($row->introtext,$thumb_size);
+					$lists[$i]->image = $images->image;
+    				$lists[$i]->thumb = $images->thumb;
+					$lists[$i]->thumbSizes = $images->thumbSizes;
+					}
     			$i++;
     		}
         }
@@ -158,7 +167,7 @@ class modjosliderHelper
 			}
 			else
 			{
-					$theme = $params->get('skin', 'default');
+				$theme = $params->get('skin', 'default');
 			}
 		$themeparameters = array();
 		
@@ -284,6 +293,178 @@ class modjosliderHelper
 		return $themeparameters;
 	}
 	
+	
+	function getTitle (&$params, $title)
+	{
+		if ((int)$params->get('truncateTitle', 0) == 0) $titleDisplay = $title; else $titleDisplay = modjosliderHelper::truncate ($title, (int)$params->get('truncateTitle'), '...', false);
+		
+		return $titleDisplay;
+	}
+	
+	function getText (&$params, $text)
+	{
+		if ($params->get('skin_type') == 'smart')
+		{
+			if ((int)$params->get('truncateText', 0) == 0) $textDisplay = $text; else $textDisplay = modjosliderHelper::truncate ($text, (int)$params->get('truncateText'), '...', true);
+			
+			//remove image
+			if ( $params->get('extractImage') == 1)
+				{
+				$textDisplay = preg_replace( "/<img[^>]+\>/i", "", $textDisplay );
+				}
+		}
+		else
+		{
+			if ((int)$params->get('truncateText', 0) == 0) $textDisplay = $text; else $textDisplay = modjosliderHelper::truncate ($text, (int)$params->get('truncateText'), '...', true);
+		}
+		return $textDisplay;
+	}
+	
+	function getDate (&$params, $dateCreation, $dateModification)
+	{
+		if ($params->get('dateType', 'dateCreation') == 'dateCreation') $dateFormat = $dateCreation; else $dateFormat = $dateModification;
+		return	$dateDisplay = JHTML::_('date', $dateFormat, JText::_($params->get('dateFormat', 'DATE_FORMAT_LC')));
+	}
+	
+	function getDateSmall (&$params, $dateCreation, $dateModification)
+	{
+		if ($params->get('dateType', 'dateCreation') == 'dateCreation') $dateFormat = $dateCreation; else $dateFormat = $dateModification;
+		return	$dateDisplay = JHTML::_('date', $dateFormat, JText::_('DATE_FORMAT_SHORT'));
+	}
+	
+	function getImages($text, $thumb_size=70) {	  
+		
+		preg_match("/\<img.+?src=\"(.+?)\".+?\/>/", $text, $matches);
+		
+		$images = new stdClass();
+		$images->image = false;
+		$images->thumb = false;
+		$images->thumbSizes = array('width' => $thumb_size, 'height' => 'auto');
+
+		$paths = array();
+		
+		if (isset($matches[1])) {
+			$image_path = $matches[1];
+
+			//joomla 1.5 only
+			$full_url = JURI::base();
+			
+			//remove any protocol/site info from the image path
+			$parsed_url = parse_url($full_url);
+			
+			$paths[] = $full_url;
+			if (isset($parsed_url['path']) && $parsed_url['path'] != "/") $paths[] = $parsed_url['path'];
+			
+			
+			foreach ($paths as $path) {
+				if (strpos($image_path,$path) === 0) {
+					$image_path = substr($image_path,strpos($image_path, $path)+strlen($path));
+				}
+			}
+			
+			// remove any / that begins the path
+			if (substr($image_path, 0 , 1) == '/') $image_path = substr($image_path, 1);
+			
+			//if after removing the uri, still has protocol then the image
+			//is remote and we don't support thumbs for external images
+			if (strpos($image_path,'http://') !== false ||
+				strpos($image_path,'https://') !== false) {
+				return false;
+			}
+			
+			$images->image = JURI::Root(True)."/".$image_path;
+			
+			// create a thumb filename
+			$file_div = strrpos($image_path,'.');
+			$thumb_ext = substr($image_path, $file_div);
+			$thumb_prev = substr($image_path, 0, $file_div);
+			$thumb_path = $thumb_prev . "_thumb" . $thumb_ext;
+	
+			// check to see if this file exists, if so we don't need to create it
+			if (function_exists("gd_info")) {
+				// file doens't exist, so create it and save it
+				if (!class_exists("Thumbnail")) include_once('library/thumbnail.inc.php');
+				
+				if (file_exists($thumb_path)) {
+				    $existing_thumb = new Thumbnail($thumb_path);
+				    $current_size = $existing_thumb->getCurrentWidth();
+					$images->thumbSizes = $existing_thumb->currentDimensions;
+				}
+
+                if (!file_exists($thumb_path) || $current_size!=$thumb_size) {
+				
+				    $thumb = new Thumbnail($image_path);
+				
+    				if ($thumb->error) { 
+    					echo "JOSLIDER ERROR: " . $thumb->errmsg . ": " . $image_path; 
+    					return false;
+    				}
+    				$thumb->resize($thumb_size);
+    				if (!is_writable(dirname($thumb_path))) {
+    					$thumb->destruct();
+    					return false;
+    				}
+    				$thumb->save($thumb_path);
+					$images->thumbSizes = $thumb->currentDimensions;
+    				$thumb->destruct();
+    			}
+			}
+			$images->thumb = $thumb_path;
+		} 
+		return $images;
+	}
+	
+	//+ Jonas Raoni Soares Silva
+	//@ http://jsfromhell.com
+
+	public static function truncate($text, $length, $suffix = '&hellip;', $isHTML = true){
+		$i = 0;
+		$simpleTags=array('br'=>true,'hr'=>true,'input'=>true,'image'=>true,'link'=>true,'meta'=>true);
+		$tags = array();
+		if($isHTML){
+			preg_match_all('/<[^>]+>([^<]*)/', $text, $m, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+			foreach($m as $o){
+				if($o[0][1] - $i >= $length)
+					break;
+				$t = substr(strtok($o[0][0], " \t\n\r\0\x0B>"), 1);
+				// test if the tag is unpaired, then we mustn't save them
+				if($t[0] != '/' && (!isset($simpleTags[$t])))
+					$tags[] = $t;
+				elseif(end($tags) == substr($t, 1))
+					array_pop($tags);
+				$i += $o[1][1] - $o[0][1];
+			}
+		}
+		
+		// output without closing tags
+		$output = substr($text, 0, $length = min(strlen($text),  $length + $i));
+		// closing tags
+		$output2 = (count($tags = array_reverse($tags)) ? '</' . implode('></', $tags) . '>' : '');
+		
+		// Find last space or HTML tag (solving problem with last space in HTML tag eg. <span class="new">)
+		$pos = (int)end(end(preg_split('/<.*>| /', $output, -1, PREG_SPLIT_OFFSET_CAPTURE)));
+		// Append closing tags to output
+		$output.=$output2;
+
+		// Get everything until last space
+		$one = substr($output, 0, $pos);
+		// Get the rest
+		$two = substr($output, $pos, (strlen($output) - $pos));
+		// Extract all tags from the last bit
+		preg_match_all('/<(.*?)>/s', $two, $tags);
+		// Add suffix if needed
+		if (strlen($text) > $length) { $one .= $suffix; }
+		// Re-attach tags
+		$output = $one . implode($tags[0]);
+
+		//added to remove  unnecessary closure
+		$output = str_replace('</!-->','',$output); 
+
+		return $output;
+	}
+
+
+
 
 	
 }
