@@ -100,8 +100,21 @@ jQuery(document).ready(function(){
 
 				<dd>
                  <?php echo $item->introtext; ?>
+                 
+                  <?php if ($params->get("displayReadMore", 1) == 1) : ?>
+                        <span class="read-more"><a href="<?php echo $item->link; ?>" target="<?php echo $params->get("target", '_parent'); ?>">
+                        <?php if ($params->get("textReadMore", '') == '') : ?>
+						<?php echo JText::_('READ_MORE'); ?>
+                         <?php else: ?>
+                        <?php echo $params->get("textReadMore"); ?>
+                         <?php endif; ?>
+                        
+                        </a></span>
+                          <?php endif; ?>
                 </dd>
 
 <?php endforeach; ?>
 </dl>
+
+ 
 </div>
