@@ -42,6 +42,8 @@
 			<option value="random">RANDOM</option>
 			<option value="date">OLDEST_FIRST</option>
 			<option value="rdate">MOST_RECENT_FIRST</option>
+			<option value="alpha">TITLE_ALPHABETICAL</option>
+          	<option value="ralpha">TITLE_REVERSE_ALPHABETICAL</option>
 			<option value="order">ORDER</option>
 		</param>
 		<param name="show_front" type="radio" default="1" label="SHOW_FRONT" description="SHOW_FRONT_DESCRIPTION">
