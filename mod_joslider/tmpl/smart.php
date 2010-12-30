@@ -58,7 +58,6 @@ jQuery(document).ready(function(){
 					start: ".$params->get("start", 1).",
 					scroll: ".$scroll.",
 					keys: ".$keys.",
-					activeCorner: ".$activeCorner.",
 					hideSpines: true,
 					autoPlay: ".$autoPlay.",
 					autoPlayInterval: ".$params->get("autoPlayInterval", 5000).",
