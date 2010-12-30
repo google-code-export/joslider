@@ -16,6 +16,7 @@
 		<folder>tmpl/</folder>
 		<folder>assets/</folder>
 		<folder>elements</folder>
+		<folder>library</folder>
 	</files>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.mod_joslider.ini</language>
@@ -49,13 +50,30 @@
 			<option value="2">ONLY_FRONTPAGE_ITEM</option>
 		</param>
 		
+		<param type="josliderhead" default="TITLE_PARAMETER" icon="tab.png" />
+		
+		<param name="truncateTitle" type="text" default="0" label="TRUNCATE_TITLE" description="TRUNCATE_TITLE_DESCRIPTION" />
+		
+		<param type="josliderhead" default="TEXT_PARAMETER" icon="text.png" />
+		
+		<param name="truncateText" type="text" default="0" label="TRUNCATE_TEXT" description="TRUNCATE_TEXT_DESCRIPTION" />
+		<param name="displayReadMore" type="radio" default="1" label="DISPLAY_READ_MORE" description="DISPLAY_READ_MORE_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="textReadMore" type="text" default="" label="TEXT_READ_MORE" description="TEXT_READ_MORE_DESCRIPTION" />
+		<param name="target" type="list" default="_parent" label="TARGET_LINK" description="TARGET_LINK_DESCRIPTION">
+			<option value="_parent">PARENT</option>
+			<option value="_blank">BLANK</option>
+		</param>
+		
 		<param   type="josliderhead" default="SLIDEDECK_PARAMETER" icon="cog.png" />
 		
 		<param name="id_slidedeck" type="text" default="slidedeck_frame" label="ID_SLIDEDECK" description="ID_SLIDEDECK_DESCRIPTION" />
 		
 		<param name="slidedeck_pro" type="radio" default="0" label="USE_SLIDEDECK_PRO" description="USE_SLIDEDECK_PRO_DESCRIPTION">
-			<option value="1">Oui</option>
-			<option value="0">Non</option>
+			<option value="1">YES</option>
+			<option value="0">NO</option>
 		</param>
 		<param   type="josliderhelp" default="SLIDEDECK_PRO_HELP" icon="add.png" />
 		<param name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_joslider/assets/js/pro/slidedeck.jquery.js" label="LOCATE_SLIDEDECK_PRO_SCRIPT" description="" />
@@ -124,9 +142,7 @@
 			<option value="ribbons">RIBBONS</option>
 		</param>
 		
-		<param name="skinSmart" type="list" default="smart" label="USE_SKIN_SMART" description="USE_SKIN_SMART_DESCRIPTION">
-			<option value="smart">Default</option>
-		</param>
+		
 		
 		<param name="custom_theme" type="radio" default="0" label="CUSTOM_THEME" description="CUSTOM_THEME_DESCRIPTION">
 			<option value="1">YES</option>
@@ -146,6 +162,38 @@
 		<param name="skin_ie8" type="text"  default="" label="SKIN_CUSTOM_IE8" description="SKIN_CUSTOM_IE8_DESCRIPTION" />
 		<param name="skinjs" type="text"  default="" label="SKIN_JS" description="SKIN_JS_DESCRIPTION" />
 		<param   type="josliderhelp" default="CUSTOM_THEME_HELP" icon="lightbulb.png" />
+		
+		<param type="josliderhead" default="SMART_PARAMETER" icon="smart.png" />
+		<param name="skinSmart" type="list" default="smart" label="USE_SKIN_SMART" description="USE_SKIN_SMART_DESCRIPTION">
+			<option value="smart">Default</option>
+		</param>
+		<param name="dateType" type="list" default="dateCreation" label="DATE_TYPE" description="DATE_TYPE_DESCRIPTION">
+			<option value="dateCreation">DATE_CREATION</option>
+			<option value="dateModification">DATE_MODIFICATION</option>
+			<option value="dateNone">NO_DATE</option>
+		</param>
+		<param name="dateFormat" type="list" default="DATE_FORMAT_LC" label="DATE_FORMAT" description="DATE_FORMAT_DESCRIPTION">
+			<option value="DATE_FORMAT_LC">DATE_FORMAT_LC</option>
+			<option value="DATE_FORMAT_LC1">DATE_FORMAT_LC1</option>
+			<option value="DATE_FORMAT_LC2">DATE_FORMAT_LC2</option>
+			<option value="DATE_FORMAT_LC3">DATE_FORMAT_LC3</option>
+			<option value="DATE_FORMAT_LC4">DATE_FORMAT_LC4</option>
+			<option value="DATE_FORMAT_JS1">DATE_FORMAT_JS1</option>
+		</param>
+		<param name="extractImage" type="radio" default="1" label="EXTRACT_IMAGE" description="EXTRACT_IMAGE_DESCRIPTION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="thumbSize" type="text"  default="90" label="THUMB_SIZE" description="THUMB_SIZE_DESCRIPTION"  />
+		
+		
+		<param name="typeNavigation" type="list" default="post-titles" label="TYPE_NAVIGATION" description="TYPE_NAVIGATION_DESCRIPTION">
+			<option value="post-titles">TITLE</option>
+			<option value="dates">DATES</option>
+			<option value="simple-dots">SIMPLE_DOTS</option>
+		</param>
+		
+		<param   type="josliderhead" default="FONT_PARAMETER" icon="font.png" />
 		
 		<param name="cufonRefresh" type="radio" default="0" label="CUFON_REFRESH" description="CUFON_REFRESH_DESCRIPTION">
 			<option value="1">YES</option>
