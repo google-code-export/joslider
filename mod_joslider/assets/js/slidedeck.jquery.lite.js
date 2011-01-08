@@ -1,6 +1,6 @@
 /**
- * SlideDeck 1.2.0 Lite - 2010-12-20
- * Copyright (c) 2010 digital-telepathy (http://www.dtelepathy.com)
+ * SlideDeck 1.2.1 Lite - 2010-12-30
+ * Copyright (c) 2011 digital-telepathy (http://www.dtelepathy.com)
  * 
  * Support the developers by purchasing the Pro version at http://www.slidedeck.com/download
  * 
@@ -38,7 +38,7 @@ var SlideDeck;
         var self = this,
             el = $(el);
         
-        var VERSION = "1.2.0";
+        var VERSION = "1.2.1";
         
         this.options = {
             speed: 500,
@@ -70,8 +70,8 @@ var SlideDeck;
         
         this.current = 1;
         this.deck = el;
-        this.spines = el.find('dt');
-        this.slides = el.find('dd');
+        this.spines = el.children('dt');
+        this.slides = el.children('dd');
         this.controlTo = 1;
         this.session = [];
         this.disabledSlides = [];
@@ -448,7 +448,7 @@ var SlideDeck;
                                         break;
                                     case true:
                                     default:
-                                        if (self.current < self.slides.length) {
+                                        if (self.current < self.slides.length || self.options.cycle == true) {
                                             event.preventDefault();
                                         }
                                     break;
@@ -463,7 +463,7 @@ var SlideDeck;
                                         break;
                                     case true:
                                     default:
-                                        if (self.current != 1) {
+                                        if (self.current != 1 || self.options.cycle == true) {
                                             event.preventDefault();
                                         }
                                     break;
