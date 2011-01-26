@@ -38,39 +38,6 @@ if ($params->get("autoPlay", 0) == 1) $autoPlay = "true"; else $autoPlay = "fals
 if ($params->get("cycle", 0) == 1) $cycle = "true"; else $cycle = "false";
 if ($params->get("cufonRefresh", 0) == 1) $font = "Cufon.replace('dl.slidedeck dt');"; else $font = "";
 
-$doc->addScriptDeclaration("
-jQuery.noConflict();
-".$font."			   
-jQuery(document).ready(function(){
-				if (jQuery.browser.safari && document.readyState != 'complete'){
-					setTimeout( arguments.callee, 100 );
-					return;
-				}
-				
-				
-				
-				jQuery('#".$idSlidedeck."').css({
-					width: '".$params->get("width_slide", 900)."px',
-					height: '".$params->get("height_slide", 300)."px'
-				});
-				jQuery('#".$idSlidedeck."').slidedeck({
-					speed: ".$params->get("speed", 500).",
-					start: ".$params->get("start", 1).",
-					scroll: ".$scroll.",
-					keys: ".$keys.",
-					hideSpines: true,
-					autoPlay: ".$autoPlay.",
-					autoPlayInterval: ".$params->get("autoPlayInterval", 5000).",
-					cycle: ".$cycle.",
-					cufonRefresh: 'dl.slidedeck dt'
-				});
-				
-			})
-
-			
-
-
-");
 
 
 ?>
@@ -133,5 +100,28 @@ jQuery(document).ready(function(){
         
         <ul class="sd-node sd-node-nav sd-node-nav-primary sd-node-navigation-type-<?php echo $params->get("typeNavigation", 'post-titles'); ?>"></ul>
 </div>
-
+<script type="text/javascript">
+jQuery.noConflict();
+<?php $font ?>			   
+jQuery(document).ready(function(){
+				
+				
+				
+				jQuery('#<?php echo $idSlidedeck ?>').css({
+					width: '<?php echo $params->get("width_slide", 900 )?>px',
+					height: '<?php echo $params->get("height_slide", 300)?>px'
+				});
+				jQuery('#<?php echo$idSlidedeck ?>').slidedeck({
+					speed: <?php echo $params->get("speed", 500)?>,
+					start: <?php echo $params->get("start", 1)?>,
+					scroll: <?php echo $scroll?>,
+					hideSpines: true,
+					autoPlay: <?php echo $autoPlay?>,
+					autoPlayInterval: <?php echo $params->get("autoPlayInterval", 5000)?>,
+					cycle: <?php echo $cycle?>,
+					cufonRefresh: 'dl.slidedeck dt'
+				});
+				
+			})
+</script>
 <?php echo '<script type="text/javascript" src="'.JURI::Root() . ''.$theme['path'].''.$theme['skinjs'].'"></script>'; ?>
