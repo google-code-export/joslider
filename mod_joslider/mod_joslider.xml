@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authoremail>matthieu@ccomca.com</authoremail>
 	<authorurl>www.ccomca.com</authorurl>
-	<version>1.1</version>
+	<version>1.1.1</version>
 	<description>JOSLIDER_DESCRIPTION</description>
 	<files>
 		<filename module="mod_joslider">mod_joslider.php</filename>
