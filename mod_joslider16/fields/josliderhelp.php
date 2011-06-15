@@ -18,24 +18,34 @@
 //-- No direct access
 defined('_JEXEC') or die();
 
-class JElementJosliderHelp extends JElement
+class JFormFieldJosliderHelp extends JFormField
 {
 	var	$_name = 'Joslider';
 
-	function fetchTooltip($label, $description, &$node, $control_name, $name) {
+	protected function getTooltip() {
 		return '&nbsp;';
 	}
+	
+	protected function getInput()
+	{
+		return ' ';
+	}
 
-	function fetchElement($name, $value, &$node, $control_name)
+	protected function getLabel()
 	{
 		
-		if ($node->attributes( 'icon' ) != "") $icon = "<img src=\"".JURI::root(true)."/modules/mod_joslider/assets/images/icons/".$node->attributes( 'icon' )."\"  align=\"absmiddle\" vspace=\"5\" />";
+		if ($this->element['icon'] != "") $icon = "<img src=\"".JURI::root(true)."/modules/mod_joslider/assets/images/icons/".$this->element['icon']."\"  align=\"absmiddle\" vspace=\"5\" />";
 		
-		if ($value) {
-			return '<p style="background: #fed674;color: #000;padding:5px">'.$icon.' <strong>' . JText::_($value) . '</strong></p>';
+		if ($this->element['default']) {
+			return '<p style="background: #fed674;color: #000;padding:5px;clear:left;">'.$icon.' <strong>'.JText::_($this->element['default']).'</strong></p>';
 		} else {
 			return '<hr />';
 		}
+	}
+	
+	protected function getTitle()
+	{
+		return $this->getLabel();
 	}
 }
 ?>

@@ -24,67 +24,54 @@
 	</languages>
 	
 <config>
-	<fields name="params">
-	 <fieldset addpath="/modules/mod_joslider/elements">
-		
-		<fieldset name="VERSION_CHECK">
-		
-		<field  type="versioncheck" ></field>
-		</fieldset>
-		<fieldset name="CONTENT_PARAMETERS">
-		
-		
-		<field name="content_type" type="list" default="joomla" label="TYPE_CONTENT" description="TYPE_CONTENT_DESCRIPTION">
-			<option value="joomla">JOOMLA_CONTENT</option>
+	<fields name="params" addfieldpath="/modules/mod_joslider/fields">
+	 <fieldset name="JOSLIDER_VERSION_CHECK" >
+		<field  type="versioncheck"/>
+	</fieldset>
+	<fieldset name="JOSLIDER_CONTENT_PARAMETERS">
+		<field name="content_type" type="list" default="joomla" label="JOSLIDER_TYPE_CONTENT" description="JOSLIDER_TYPE_CONTENT_DESCRIPTION">
+			<option value="joomla">JOSLIDER_JOOMLA_CONTENT</option>
 		</field>
-		
 		<field name="catid" type="category" default="" label="Joomla Category" description="" extension="com_content" />
-		
-		
-		<field name="itemsOrdering" type="list" default="" label="ARTICLES_ORDER" description="">
-			<option value="">DEFAULT</option>
-			<option value="random">RANDOM</option>
-			<option value="date">OLDEST_FIRST</option>
-			<option value="rdate">MOST_RECENT_FIRST</option>
-			<option value="alpha">TITLE_ALPHABETICAL</option>
-          	<option value="ralpha">TITLE_REVERSE_ALPHABETICAL</option>
-			<option value="order">ORDER</option>
+		<field name="itemsOrdering" type="list" default="" label="JOSLIDER_ARTICLES_ORDER" description="">
+			<option value="">JOSLIDER_DEFAULT</option>
+			<option value="random">JOSLIDER_RANDOM</option>
+			<option value="date">JOSLIDER_OLDEST_FIRST</option>
+			<option value="rdate">JOSLIDER_MOST_RECENT_FIRST</option>
+			<option value="alpha">JOSLIDER_TITLE_ALPHABETICAL</option>
+          	<option value="ralpha">JOSLIDER_TITLE_REVERSE_ALPHABETICAL</option>
+			<option value="order">JOSLIDER_ORDER</option>
 		</field>
-		<field name="show_front" type="radio" default="1" label="SHOW_FRONT" description="SHOW_FRONT_DESCRIPTION">
-			<option value="1">SHOW</option>
-			<option value="0">HIDE</option>
-			<option value="2">ONLY_FRONTPAGE_ITEM</option>
+		<field name="show_front" type="radio" default="1" label="JOSLIDER_SHOW_FRONT" description="JOSLIDER_SHOW_FRONT_DESCRIPTION">
+			<option value="1">JOSLIDER_SHOW</option>
+			<option value="0">JOSLIDER_HIDE</option>
+			<option value="2">JOSLIDER_ONLY_FRONTPAGE_ITEM</option>
 		</field>
-		</fieldset>
-		<fieldset name="TITLE_PARAMETER">
-		
-		
-		<field name="truncateTitle" type="text" default="0" label="TRUNCATE_TITLE" description="TRUNCATE_TITLE_DESCRIPTION" ></field>
-		
-		<field type="josliderhead" default="TEXT_PARAMETER" icon="text.png" ></field>
-		
-		<field name="truncateText" type="text" default="0" label="TRUNCATE_TEXT" description="TRUNCATE_TEXT_DESCRIPTION" ></field>
-		<field name="displayReadMore" type="radio" default="1" label="DISPLAY_READ_MORE" description="DISPLAY_READ_MORE_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+	</fieldset>
+	<fieldset name="JOSLIDER_TITLE_PARAMETER">
+		<field name="truncateTitle" type="text" default="0" label="JOSLIDER_TRUNCATE_TITLE" description="JOSLIDER_TRUNCATE_TITLE_DESCRIPTION" ></field>
+	</fieldset>
+	<fieldset name="JOSLIDER_TEXT_PARAMETER">
+		<field name="truncateText" type="text" default="0" label="JOSLIDER_TRUNCATE_TEXT" description="JOSLIDER_TRUNCATE_TEXT_DESCRIPTION" ></field>
+		<field name="displayReadMore" type="radio" default="1" label="JOSLIDER_DISPLAY_READ_MORE" description="JOSLIDER_DISPLAY_READ_MORE_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="textReadMore" type="text" default="" label="TEXT_READ_MORE" description="TEXT_READ_MORE_DESCRIPTION" ></field>
-		<field name="target" type="list" default="_parent" label="TARGET_LINK" >
-			<option value="_parent">PARENT</option>
-			<option value="_blank">BLANK</option>
+		<field name="textReadMore" type="text" default="" label="JOSLIDER_TEXT_READ_MORE" description="JOSLIDER_TEXT_READ_MORE_DESCRIPTION" ></field>
+		<field name="target" type="list" default="_parent" label="JOSLIDER_TARGET_LINK" >
+			<option value="_parent">JOSLIDER_PARENT</option>
+			<option value="_blank">JOSLIDER_BLANK</option>
 		</field>
-		</fieldset>
-		<fieldset name="SLIDEDECK_PARAMETER">
+	</fieldset>
+	<fieldset name="JOSLIDER_SLIDEDECK_PARAMETER">
+		<field name="id_slidedeck" type="text" default="slidedeck_frame" label="JOSLIDER_ID_SLIDEDECK" description="JOSLIDER_ID_SLIDEDECK_DESCRIPTION" ></field>
 		
-		
-		<field name="id_slidedeck" type="text" default="slidedeck_frame" label="ID_SLIDEDECK" description="ID_SLIDEDECK_DESCRIPTION" ></field>
-		
-		<field name="slidedeck_pro" type="radio" default="0" label="USE_SLIDEDECK_PRO" description="USE_SLIDEDECK_PRO_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="slidedeck_pro" type="radio" default="0" label="JOSLIDER_USE_SLIDEDECK_PRO" description="JOSLIDER_USE_SLIDEDECK_PRO_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field   type="josliderhelp" default="SLIDEDECK_PRO_HELP" icon="add.png" ></field>
-		<field name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_joslider/assets/js/pro/slidedeck.jquery.js" label="LOCATE_SLIDEDECK_PRO_SCRIPT" description="" ></field>
+		<field   type="josliderhelp" default="JOSLIDER_SLIDEDECK_PRO_HELP" icon="add.png" />
+		<field name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_joslider/assets/js/pro/slidedeck.jquery.js" label="JOSLIDER_LOCATE_SLIDEDECK_PRO_SCRIPT" description="" ></field>
 		<field name="tab_count" type="text" default="4" label="TAB_COUNT" description="TAB_COUNT_DESCRIPTION" ></field>
 		<field name="width_slide" type="text" default="900" label="WIDTH" description="" ></field>
 		<field name="height_slide" type="text" default="300" label="HEIGHT" description="" ></field>
@@ -136,7 +123,7 @@
 			<option value="0">NO</option>
 		</field>
 		</fieldset>
-		<field   type="josliderhead" default="THEMES_PARAMETER" icon="css.png" ></field>
+		<fieldset name="THEMES_PARAMETER">
 		<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" ></field>
 		<field name="skin_type" type="list" default="default" label="SKIN_TYPE" description="SKIN_TYPE_DESCRIPTION">
 			<option value="normal">NORMAL</option>
@@ -171,8 +158,8 @@
 		<field name="skin_ie8" type="text"  default="" label="SKIN_CUSTOM_IE8" description="SKIN_CUSTOM_IE8_DESCRIPTION" ></field>
 		<field name="skinjs" type="text"  default="" label="SKIN_JS" description="SKIN_JS_DESCRIPTION" ></field>
 		<field   type="josliderhelp" default="CUSTOM_THEME_HELP" icon="lightbulb.png" ></field>
-		
-		<field type="josliderhead" default="SMART_PARAMETER" icon="smart.png" ></field>
+		</fieldset>
+		<fieldset name="SMART_PARAMETER">
 		<field name="skinSmart" type="list" default="smart" label="USE_SKIN_SMART" description="USE_SKIN_SMART_DESCRIPTION">
 			<option value="smart">Default</option>
 		</field>
@@ -201,9 +188,8 @@
 			<option value="dates">DATES</option>
 			<option value="simple-dots">SIMPLE_DOTS</option>
 		</field>
-		
-		<field   type="josliderhead" default="FONT_PARAMETER" icon="font.png" ></field>
-		
+		</fieldset>
+		<fieldset name="FONT_PARAMETER">
 		<field name="cufonRefresh" type="radio" default="0" label="CUFON_REFRESH" description="CUFON_REFRESH_DESCRIPTION">
 			<option value="1">YES</option>
 			<option value="0">NO</option>
