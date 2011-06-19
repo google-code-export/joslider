@@ -288,6 +288,13 @@ class modjosliderHelper
 			$cssie .= '<![endif]-->' ."\n";
 			$doc->addCustomTag($cssie);
 			}
+		if ($themeparameters['cssie9'])
+			{
+			$cssie = '<!--[if lte IE 9]>' ."\n";
+			$cssie .= '<link rel="stylesheet" type="text/css" href="'.JURI::Root(true) . ''.$themeparameters['path'].''.$themeparameters['cssie9'].'" media="screen,handheld" />' ."\n";
+			$cssie .= '<![endif]-->' ."\n";
+			$doc->addCustomTag($cssie);
+			}
 
 			
 		return $themeparameters;
