@@ -162,6 +162,7 @@
 		<param name="skin_ie7" type="text"  default="" label="SKIN_CUSTOM_IE7" description="SKIN_CUSTOM_IE7_DESCRIPTION" />
 		
 		<param name="skin_ie8" type="text"  default="" label="SKIN_CUSTOM_IE8" description="SKIN_CUSTOM_IE8_DESCRIPTION" />
+		<param name="skin_ie9" type="text"  default="" label="SKIN_CUSTOM_IE9" description="SKIN_CUSTOM_IE9_DESCRIPTION" />
 		<param name="skinjs" type="text"  default="" label="SKIN_JS" description="SKIN_JS_DESCRIPTION" />
 		<param   type="josliderhelp" default="CUSTOM_THEME_HELP" icon="lightbulb.png" />
 		
