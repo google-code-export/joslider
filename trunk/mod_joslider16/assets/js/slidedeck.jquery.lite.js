@@ -1,5 +1,5 @@
 /**
- * SlideDeck 1.2.1 Lite - 2010-12-30
+ * SlideDeck 1.2.5 Lite - 2011-06-01
  * Copyright (c) 2011 digital-telepathy (http://www.dtelepathy.com)
  * 
  * Support the developers by purchasing the Pro version at http://www.slidedeck.com/download
@@ -32,13 +32,14 @@
  */
 
 var SlideDeck;
+var SlideDeckSkin = {};
 
 (function($){
-    SlideDeck = function(el,opts){
+    window.SlideDeck = function(el,opts){
         var self = this,
             el = $(el);
         
-        var VERSION = "1.2.1";
+        var VERSION = "1.2.5";
         
         this.options = {
             speed: 500,
@@ -80,24 +81,25 @@ var SlideDeck;
         
         var UA = navigator.userAgent.toLowerCase();
         this.browser = {
-                chrome: UA.match(/chrome/) ? true : false,
-                firefox: UA.match(/firefox/) ? true : false,
-                firefox2: UA.match(/firefox\/2/) ? true : false,
-                firefox30: UA.match(/firefox\/3\.0/) ? true : false,
-                msie: UA.match(/msie/) ? true : false,
-                msie6: (UA.match(/msie 6/) && !UA.match(/msie 7|8/)) ? true : false,
-                msie7: UA.match(/msie 7/) ? true : false,
-                msie8: UA.match(/msie 8/) ? true : false,
-                chromeFrame: (UA.match(/msie/) && UA.match(/chrome/)) ? true : false,
-                opera: UA.match(/opera/) ? true : false,
-                safari: (UA.match(/safari/) && !UA.match(/chrome/)) ? true : false
-            };
+	        chrome: UA.match(/chrome/) ? true : false,
+	        firefox: UA.match(/firefox/) ? true : false,
+	        firefox2: UA.match(/firefox\/2/) ? true : false,
+	        firefox30: UA.match(/firefox\/3\.0/) ? true : false,
+	        msie: UA.match(/msie/) ? true : false,
+	        msie6: (UA.match(/msie 6/) && !UA.match(/msie 7|8/)) ? true : false,
+	        msie7: UA.match(/msie 7/) ? true : false,
+	        msie8: UA.match(/msie 8/) ? true : false,
+	        msie9: UA.match(/msie 9/) ? true : false,
+	        chromeFrame: (UA.match(/msie/) && UA.match(/chrome/)) ? true : false,
+	        opera: UA.match(/opera/) ? true : false,
+	        safari: (UA.match(/safari/) && !UA.match(/chrome/)) ? true : false
+        };
         for(var b in this.browser){
             if(this.browser[b] === true){
                 this.browser._this = b;
             }
         }
-        if(this.browser.chrome === true) {
+        if(this.browser.chrome === true && !this.browser.chromeFrame) {
             this.browser.version = UA.match(/chrome\/([0-9\.]+)/)[1];
         }
         if(this.browser.firefox === true) {
@@ -122,7 +124,7 @@ var SlideDeck;
             spine_half_width;
         
         var FixIEAA = function(spine){
-            if(self.browser.msie && !self.browser.chromeFrame){
+            if(self.browser.msie && !self.browser.msie9){
                 var bgColor = spine.css('background-color');
                 var sBgColor = bgColor;
                 if(sBgColor == "transparent"){
@@ -181,7 +183,7 @@ var SlideDeck;
             if(!document.getElementById(BUG.id)){
                 var bugLink = document.createElement('A');
                     bugLink.id = BUG.id;
-                    bugLink.href = "http://www.slidedeck.com/?ref=" + document.location.hostname;
+                    bugLink.href = "http://www.slidedeck.com/?utm_source=LiteUser&utm_medium=Link&utm_campaign=SDbug";
                     bugLink.target = "_blank";
                 var bugImg = document.createElement('IMG');
                     bugImg.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//www.slidedeck.com/6885858486f31043e5839c735d99457f045affd0/" + VERSION + "/lite";
@@ -311,7 +313,7 @@ var SlideDeck;
                         }
                     }
                     var spinePadString = spinePad.top + "px " + spinePad.right + "px " + spinePad.bottom + "px " + spinePad.left + "px";
-                    spine.css({
+                    var spineStyles = {
                         position: 'absolute',
                         zIndex: 3,
                         display: 'block',
@@ -326,11 +328,22 @@ var SlideDeck;
                         '-moz-transform-origin': spine_half_width + 'px 0px',
                         '-o-transform': 'rotate(270deg)',
                         '-o-transform-origin': spine_half_width + 'px 0px',
-                        textAlign: 'right',
-                        top: (self.browser.msie && !self.browser.chromeFrame) ? 0 : (height - spine_half_width) + "px",
-                        marginLeft: ((self.browser.msie && !self.browser.chromeFrame) ? 0 : (0 - spine_half_width)) + "px",
-                        filter: 'progid:DXImageTransform.Microsoft.BasicImage(rotation=3)'
-                    }).addClass(self.classes.spine).addClass(self.classes.spine + "_" + (i + 1));
+                        textAlign: 'right'
+                    };
+                    
+                    if( !self.browser.msie9 ){
+                        spineStyles.top = (self.browser.msie) ? 0 : (height - spine_half_width) + "px";
+                        spineStyles.marginLeft = ((self.browser.msie) ? 0 : (0 - spine_half_width)) + "px";
+	                    spineStyles.filter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation=3)';
+                    }
+
+                    spine.css( spineStyles ).addClass(self.classes.spine).addClass(self.classes.spine + "_" + (i + 1));
+                    
+                    if(self.browser.msie9){
+                        spine[0].style.msTransform = 'rotate(270deg)';
+                        spine[0].style.msTransformOrigin = Math.round(parseInt(el[0].style.height) / 2) + 'px ' + Math.round(parseInt(el[0].style.height) / 2) + 'px';
+                    }
+                    
                 } else {
                     if(typeof(spine) != "undefined"){
                         spine.hide();
@@ -384,8 +397,8 @@ var SlideDeck;
                         width: spine_inner_width + "px",
                         height: spine_inner_width + "px",
                         textAlign: 'center',
-                        bottom: ((self.browser.msie && !self.browser.chromeFrame) ? 0 : (0 - spine_half_width)) + "px",
-                        left: ((self.browser.msie && !self.browser.chromeFrame) ? 5 : 20) + "px",
+                        bottom: ((self.browser.msie) ? 0 : (0 - spine_half_width)) + "px",
+                        left: ((self.browser.msie) ? 5 : 20) + "px",
                         rotation: "90deg",
                         '-webkit-transform': 'rotate(90deg)',
                         '-webkit-transform-origin': spine_half_width + 'px 0px',
@@ -394,6 +407,10 @@ var SlideDeck;
                         '-o-transform': 'rotate(90deg)',
                         '-o-transform-origin': spine_half_width + 'px 0px'
                     });
+                    
+                    if(self.browser.msie9){
+                        spine.find('.' + self.classes.index)[0].style.msTransform = 'rotate(90deg)';
+                    }
 
                     FixIEAA(spine);
                 }
