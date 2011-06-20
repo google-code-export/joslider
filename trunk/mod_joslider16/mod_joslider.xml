@@ -72,103 +72,96 @@
 		</field>
 		<field   type="josliderhelp" default="JOSLIDER_SLIDEDECK_PRO_HELP" icon="add.png" />
 		<field name="slidedeck_pro_directory" type="text" size="45" default="modules/mod_joslider/assets/js/pro/slidedeck.jquery.js" label="JOSLIDER_LOCATE_SLIDEDECK_PRO_SCRIPT" description="" ></field>
-		<field name="tab_count" type="text" default="4" label="TAB_COUNT" description="TAB_COUNT_DESCRIPTION" ></field>
-		<field name="width_slide" type="text" default="900" label="WIDTH" description="" ></field>
-		<field name="height_slide" type="text" default="300" label="HEIGHT" description="" ></field>
-		<field name="load_jquery" type="radio" default="1" label="LOAD_JQUERY" description="">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="tab_count" type="text" default="4" label="JOSLIDER_TAB_COUNT" description="JOSLIDER_TAB_COUNT_DESCRIPTION" ></field>
+		<field name="width_slide" type="text" default="900" label="JOSLIDER_WIDTH" description="" ></field>
+		<field name="height_slide" type="text" default="300" label="JOSLIDER_HEIGHT" description="" ></field>
+		<field name="load_jquery" type="radio" default="1" label="JOSLIDER_LOAD_JQUERY" description="">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="load_mousewheel" type="radio" default="1" label="LOAD_MOUSE_WHEEL" description="">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="load_mousewheel" type="radio" default="1" label="JOSLIDER_LOAD_MOUSE_WHEEL" description="">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
 		
-		<field name="vertical_slide" type="radio" default="1" label="VERTICAL_SLIDE_PRO" description="VERTICAL_SLIDE_PRO_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="vertical_slide" type="radio" default="1" label="JOSLIDER_VERTICAL_SLIDE_PRO" description="">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field   type="josliderhelp" default="VERTICAL_SLIDE_HELP" icon="lightbulb.png" ></field>
-		<field name="speed" type="text"  default="500" label="SPEED" description="SPEED_DESCRIPTION" ></field>
-		<field name="start" type="text"  default="1" label="START" description="START_DESCRIPTION" ></field>
-		<field name="index" type="radio" default="1" label="INDEX" description="INDEX_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field   type="josliderhelp" default="JOSLIDER_VERTICAL_SLIDE_HELP" icon="lightbulb.png" ></field>
+		<field name="speed" type="text"  default="500" label="JOSLIDER_SPEED" description="JOSLIDER_SPEED_DESCRIPTION" ></field>
+		<field name="start" type="text"  default="1" label="JOSLIDER_START" description="JOSLIDER_START_DESCRIPTION" ></field>
+		<field name="index" type="radio" default="1" label="JOSLIDER_INDEX" description="JOSLIDER_INDEX_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="custom_index" type="text" size="45"  default="" label="CUSTOM_INDEX" description="CUSTOM_INDEX_DESCRIPTION" ></field>
-		<field   type="josliderhelp" default="CUSTOM_INDEX_HELP" icon="lightbulb.png" ></field>
-		<field name="scroll" type="radio" default="1" label="SCROLL" description="SCROLL_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="custom_index" type="text" size="45"  default="" label="JOSLIDER_CUSTOM_INDEX" description="JOSLIDER_CUSTOM_INDEX_DESCRIPTION"></field>
+		<field   type="josliderhelp" default="JOSLIDER_CUSTOM_INDEX_HELP" icon="lightbulb.png" ></field>
+		<field name="scroll" type="radio" default="1" label="JOSLIDER_SCROLL" description="JOSLIDER_SCROLL_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="keys" type="radio" default="1" label="KEYS" description="KEYS_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="keys" type="radio" default="1" label="JOSLIDER_KEYS" description="JOSLIDER_KEYS_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="activeCorner" type="radio" default="1" label="ACTIVE_CORNER" description="ACTIVE_CORNER_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="activeCorner" type="radio" default="1" label="JOSLIDER_ACTIVE_CORNER" description="JOSLIDER_ACTIVE_CORNER_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="hideSpines" type="radio" default="0" label="HIDE_SPINES" description="HIDE_SPINES_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="hideSpines" type="radio" default="0" label="JOSLIDER_HIDE_SPINES" description="JOSLIDER_HIDE_SPINES_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="autoPlay" type="radio" default="0" label="AUTO_PLAY" description="AUTO_PLAY_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="autoPlay" type="radio" default="0" label="JOSLIDER_AUTO_PLAY" description="JOSLIDER_AUTO_PLAY_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="autoPlayInterval" type="text"  default="5000" label="AUTO_PLAY_INTERVAL" description="AUTO_PLAY_INTERVAL_DESCRIPTION" ></field>
-		<field name="cycle" type="radio" default="0" label="CYCLE" description="CYCLE_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="autoPlayInterval" type="text"  default="5000" label="JOSLIDER_AUTO_PLAY_INTERVAL" description="JOSLIDER_AUTO_PLAY_INTERVAL_DESCRIPTION" ></field>
+		<field name="cycle" type="radio" default="0" label="JOSLIDER_CYCLE" description="JOSLIDERCYCLE_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
 		</fieldset>
-		<fieldset name="THEMES_PARAMETER">
-		<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" ></field>
-		<field name="skin_type" type="list" default="default" label="SKIN_TYPE" description="SKIN_TYPE_DESCRIPTION">
-			<option value="normal">NORMAL</option>
-			<option value="smart">SMART</option>
+		<fieldset name="JOSLIDER_THEMES_PARAMETER">
+		<field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" ></field>
+		<field name="skin_type" type="list" default="default" label="JOSLIDER_SKIN_TYPE" description="">
+			<option value="normal">JOSLIDER_NORMAL</option>
+			<option value="smart">JOSLIDER_SMART</option>
 		</field>
-		<field name="skin" type="list" default="default" label="USE_SKIN" description="USE_SKIN_DESCRIPTION">
-			<option value="default">SLIDEDECK</option>
-			<option value="voyager">VOYAGER</option>
-			<option value="invasion">INVASION</option>
-			<option value="literally">LITERALLY</option>
-			<option value="stitch">STITCH</option>
-			<option value="ribbons">RIBBONS</option>
+		<field name="skin" type="list" default="default" label="JOSLIDER_USE_SKIN" description="JOSLIDER_USE_SKIN_DESCRIPTION">
+			<option value="default">Slidedeck</option>
+			<option value="voyager">Voyager</option>
+			<option value="invasion">Invasion</option>
+			<option value="literally">Litterally</option>
+			<option value="stitch">Stitch</option>
+			<option value="ribbons">Ribbons</option>
 		</field>
-		
-		
-		
-		<field name="custom_theme" type="radio" default="0" label="CUSTOM_THEME" description="CUSTOM_THEME_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="custom_theme" type="radio" default="0" label="JOSLIDER_CUSTOM_THEME" description="JOSLIDER_CUSTOM_THEME_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="theme_repertory" type="text" size="45" default="/modules/mod_joslider/assets/css/template/custom/" label="THEME_REPERTORY" description="THEME_REPERTORY_DESCRIPTION" ></field>
-		<field   type="josliderhelp" default="ATTENTION_SLASH_HELP" icon="attention.png" ></field>
-		
-		<field name="theme_class" type="text"  default="custom" label="THEME_CLASS" description="THEME_CLASS_DESCRIPTION" ></field>
-		
-		<field name="skin_theme" type="text"  default="" label="SKIN_CUSTOM" description="SKIN_CUSTOM_DESCRIPTION" ></field>
-		
-		<field name="skin_ie" type="text"  default="" label="SKIN_CUSTOM_IE" description="SKIN_CUSTOM_IE_DESCRIPTION" ></field>
-		
-		<field name="skin_ie7" type="text"  default="" label="SKIN_CUSTOM_IE7" description="SKIN_CUSTOM_IE7_DESCRIPTION" ></field>
-		
-		<field name="skin_ie8" type="text"  default="" label="SKIN_CUSTOM_IE8" description="SKIN_CUSTOM_IE8_DESCRIPTION" ></field>
-		<field name="skinjs" type="text"  default="" label="SKIN_JS" description="SKIN_JS_DESCRIPTION" ></field>
-		<field   type="josliderhelp" default="CUSTOM_THEME_HELP" icon="lightbulb.png" ></field>
+		<field name="theme_repertory" type="text" size="45" default="/modules/mod_joslider/assets/css/template/custom/" label="JOSLIDER_THEME_REPERTORY" description="JOSLIDER_THEME_REPERTORY_DESCRIPTION" ></field>
+		<field   type="josliderhelp" default="JOSLIDER_ATTENTION_SLASH_HELP" icon="attention.png" ></field>
+		<field name="theme_class" type="text"  default="custom" label="JOSLIDER_THEME_CLASS" description="JOSLIDER_THEME_CLASS_DESCRIPTION" ></field>
+		<field name="skin_theme" type="text"  default="" label="JOSLIDER_SKIN_CUSTOM" description="JOSLIDER_SKIN_CUSTOM_DESCRIPTION" ></field>
+		<field name="skin_ie" type="text"  default="" label="JOSLIDER_SKIN_CUSTOM_IE" description="JOSLIDER_SKIN_CUSTOM_IE_DESCRIPTION" ></field>
+		<field name="skin_ie7" type="text"  default="" label="JOSLIDER_SKIN_CUSTOM_IE7" description="JOSLIDER_SKIN_CUSTOM_IE7_DESCRIPTION" ></field>
+		<field name="skin_ie8" type="text"  default="" label="JOSLIDER_SKIN_CUSTOM_IE8" description="JOSLIDER_SKIN_CUSTOM_IE8_DESCRIPTION" ></field>
+		<field name="skin_ie9" type="text"  default="" label="JOSLIDER_SKIN_CUSTOM_IE9" description="JOSLIDER_SKIN_CUSTOM_IE9_DESCRIPTION" ></field>
+		<field name="skinjs" type="text"  default="" label="JOSLIDER_SKIN_JS" description="JOSLIDER_SKIN_JS_DESCRIPTION" ></field>
+		<field   type="josliderhelp" default="JOSLIDER_CUSTOM_THEME_HELP" icon="lightbulb.png" ></field>
 		</fieldset>
-		<fieldset name="SMART_PARAMETER">
-		<field name="skinSmart" type="list" default="smart" label="USE_SKIN_SMART" description="USE_SKIN_SMART_DESCRIPTION">
-			<option value="smart">Default</option>
+		<fieldset name="JOSLIDER_SMART_PARAMETER">
+		<field name="skinSmart" type="list" default="smart" label="JOSLIDER_USE_SKIN_SMART" description="JOSLIDER_USE_SKIN_SMART_DESCRIPTION">
+			<option value="smart">JOSLIDER_DEFAULT</option>
 		</field>
-		<field name="dateType" type="list" default="dateCreation" label="DATE_TYPE" description="DATE_TYPE_DESCRIPTION">
-			<option value="dateCreation">DATE_CREATION</option>
-			<option value="dateModification">DATE_MODIFICATION</option>
-			<option value="dateNone">NO_DATE</option>
+		<field name="dateType" type="list" default="dateCreation" label="JOSLIDER_DATE_TYPE" description="JOSLIDER_DATE_TYPE_DESCRIPTION">
+			<option value="dateCreation">JOSLIDER_DATE_CREATION</option>
+			<option value="dateModification">JOSLIDER_DATE_MODIFICATION</option>
+			<option value="dateNone">JOSLIDER_NO_DATE</option>
 		</field>
-		<field name="dateFormat" type="list" default="DATE_FORMAT_LC" label="DATE_FORMAT" >
+		<field name="dateFormat" type="list" default="DATE_FORMAT_LC" label="JOSLIDER_DATE_FORMAT" >
 			<option value="DATE_FORMAT_LC">DATE_FORMAT_LC</option>
 			<option value="DATE_FORMAT_LC1">DATE_FORMAT_LC1</option>
 			<option value="DATE_FORMAT_LC2">DATE_FORMAT_LC2</option>
@@ -176,26 +169,26 @@
 			<option value="DATE_FORMAT_LC4">DATE_FORMAT_LC4</option>
 			<option value="DATE_FORMAT_JS1">DATE_FORMAT_JS1</option>
 		</field>
-		<field name="extractImage" type="radio" default="1" label="EXTRACT_IMAGE" description="EXTRACT_IMAGE_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<field name="extractImage" type="radio" default="1" label="JOSLIDER_EXTRACT_IMAGE" description="JOSLIDER_EXTRACT_IMAGE_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="thumbSize" type="text"  default="90" label="THUMB_SIZE" description="THUMB_SIZE_DESCRIPTION"  ></field>
+		<field name="thumbSize" type="text"  default="90" label="JOSLIDER_THUMB_SIZE" description="JOSLIDER_THUMB_SIZE_DESCRIPTION"  ></field>
 		
 		
-		<field name="typeNavigation" type="list" default="post-titles" label="TYPE_NAVIGATION" >
-			<option value="post-titles">TITLE</option>
-			<option value="dates">DATES</option>
-			<option value="simple-dots">SIMPLE_DOTS</option>
+		<field name="typeNavigation" type="list" default="post-titles" label="JOSLIDER_TYPE_NAVIGATION" >
+			<option value="post-titles">JOSLIDER_TITLE</option>
+			<option value="dates">JOSLIDER_DATES</option>
+			<option value="simple-dots">JOSLIDER_SIMPLE_DOTS</option>
 		</field>
 		</fieldset>
-		<fieldset name="FONT_PARAMETER">
-		<field name="cufonRefresh" type="radio" default="0" label="CUFON_REFRESH" description="CUFON_REFRESH_DESCRIPTION">
-			<option value="1">YES</option>
-			<option value="0">NO</option>
+		<fieldset name="JOSLIDER_FONT_PARAMETER">
+		<field name="cufonRefresh" type="radio" default="0" label="JOSLIDER_CUFON_REFRESH" description="JOSLIDER_CUFON_REFRESH_DESCRIPTION">
+			<option value="1">JOSLIDER_YES</option>
+			<option value="0">JOSLIDER_NO</option>
 		</field>
-		<field name="cufon_font" type="text" size="45" default="modules/mod_joslider/assets/js/font/Rawengulk_700.font.js" label="CUFON_FONT"  ></field>
-		<field   type="josliderhelp" default="CUFON_FONT_HELP" icon="lightbulb.png" ></field>
+		<field name="cufon_font" type="text" size="45" default="modules/mod_joslider/assets/js/font/Rawengulk_700.font.js" label="JOSLIDER_CUFON_FONT"  ></field>
+		<field   type="josliderhelp" default="JOSLIDER_CUFON_FONT_HELP" icon="lightbulb.png" ></field>
 	</fieldset>
 	<fieldset name="advanced">
 		<field name="cache" type="hidden" default="0" ></field>

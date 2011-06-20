@@ -58,7 +58,7 @@ if ($params->get("cufonRefresh", 0) == 1) $font = "Cufon.replace('dl.slidedeck d
                         </div>
                         <div class="sd-node sd-node-date"><?php echo $item->dateSmall; ?></div>
                         <?php if ($params->get("dateType", 'dateCreation') != 'dateNone') : ?>
-                        <div class="sd-node sd-node-timesince"><?php echo JText::_('POSTED'); ?> <?php echo $item->date; ?></div>
+                        <div class="sd-node sd-node-timesince"><?php echo JText::_('JOSLIDER_POSTED'); ?> <?php echo $item->date; ?></div>
                         <?php endif; ?>
                         <div class="sd-node sd-node-excerpt">
                            <?php echo $item->introtext; ?>
@@ -67,7 +67,7 @@ if ($params->get("cufonRefresh", 0) == 1) $font = "Cufon.replace('dl.slidedeck d
                         <?php if ($params->get("displayReadMore", 1) == 1) : ?>
                         <div class="sd-node sd-node-permalink"><a href="<?php echo $item->link; ?>" target="<?php echo $params->get("target", '_parent'); ?>">
                         <?php if ($params->get("textReadMore", '') == '') : ?>
-						<?php echo JText::_('READ_MORE'); ?>
+						<?php echo JText::_('JOSLIDER_READ_MORE'); ?>
                          <?php else: ?>
                         <?php echo $params->get("textReadMore"); ?>
                          <?php endif; ?>
@@ -96,7 +96,7 @@ if ($params->get("cufonRefresh", 0) == 1) $font = "Cufon.replace('dl.slidedeck d
 <?php endforeach; ?>
 </dl>
 
- <a class="sd-node sd-node-nav-link sd-node-previous" href="#previous" target="_blank"><?php echo JText::_('PREVIOUS'); ?></a><a class="sd-node sd-node-nav-link sd-node-next" href="#next" target="_blank"><?php echo JText::_('NEXT'); ?></a>
+ <a class="sd-node sd-node-nav-link sd-node-previous" href="#previous" target="_blank"><?php echo JText::_('JOSLIDER_PREVIOUS'); ?></a><a class="sd-node sd-node-nav-link sd-node-next" href="#next" target="_blank"><?php echo JText::_('JOSLIDER_NEXT'); ?></a>
         
         <ul class="sd-node sd-node-nav sd-node-nav-primary sd-node-navigation-type-<?php echo $params->get("typeNavigation", 'post-titles'); ?>"></ul>
 </div>
