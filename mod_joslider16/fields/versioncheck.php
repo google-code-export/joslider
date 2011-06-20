@@ -89,7 +89,7 @@ class JFormFieldVersionCheck extends JFormField
 				$title = (string) $entry->title[0]->data();
 				if ($title != "")
 					{
-						if (preg_match('/joslider-1.6-(.*).zip/', $title, $matches)){	   
+						if (preg_match('/joslider-joomla16-(.*).zip/', $title, $matches)){	   
 									$version = $matches[1];
 						}
 						$check['version'] 		= $version;
