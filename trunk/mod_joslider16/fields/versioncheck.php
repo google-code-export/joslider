@@ -96,7 +96,7 @@ class JFormFieldVersionCheck extends JFormField
 						$released 				= & $entry->updated[0];
 						$check['released'] 		= & $released->data();
 						$linkattribs 			= & $entry->link[0]->attributes();
-						$check['link'] 			= & $linkattribs['href'];
+						$check['link'] 			= "http://code.google.com/p/joslider/downloads/detail?name=mod_joslider16-".$version.".zip";
 					}
 				}
 			
